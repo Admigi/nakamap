@@ -1,4 +1,5 @@
 class PinsController < ApplicationController
+  before_action :authenticate_user
 
   def index
     @pins = Pin.all
@@ -11,7 +12,10 @@ class PinsController < ApplicationController
 
 
 
+  private
 
-
+  def pin_params
+    params.require(:pin).permit!
+  end
 
 end
