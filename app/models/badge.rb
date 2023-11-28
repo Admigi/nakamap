@@ -1,3 +1,3 @@
 class Badge < ApplicationRecord
-  has_many :userbadge
+  has_many :userbadges
 end
