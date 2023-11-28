@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_28_101253) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_28_155021) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -38,17 +38,17 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_28_101253) do
     t.bigint "region_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "post_id", null: false
     t.index ["categorie_id"], name: "index_pins_on_categorie_id"
+    t.index ["post_id"], name: "index_pins_on_post_id"
     t.index ["region_id"], name: "index_pins_on_region_id"
   end
 
   create_table "posts", force: :cascade do |t|
     t.string "content"
     t.string "multimedia"
-    t.bigint "pin_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["pin_id"], name: "index_posts_on_pin_id"
   end
 
   create_table "regions", force: :cascade do |t|
@@ -95,8 +95,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_28_101253) do
   end
 
   add_foreign_key "pins", "categories", column: "categorie_id"
+  add_foreign_key "pins", "posts"
   add_foreign_key "pins", "regions"
-  add_foreign_key "posts", "pins"
   add_foreign_key "streetviews", "posts"
   add_foreign_key "userbadges", "badges"
   add_foreign_key "userbadges", "users"
