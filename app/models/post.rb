@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  belongs_to :pin
+  has_one :pin
 
   validates :content, presence: true
   validates :multimedia, presence: true
