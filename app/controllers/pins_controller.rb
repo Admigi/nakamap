@@ -1,8 +1,16 @@
 class PinsController < ApplicationController
-  before_action :authenticate_user
+  skip_before_action :authenticate_user!
+  # before_action :authenticate_user
 
   def index
     @pins = Pin.all
+
+    @markers = @pins.geocoded.map do |pin|
+      {
+        lat: pin.latitude,
+        lng: pin.longitude
+      }
+    end
   end
 
   def show
