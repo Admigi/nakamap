@@ -6,6 +6,6 @@ class Pin < ApplicationRecord
   validates :name, presence: true
   validates :description, presence: true
 
-  # reverse_geocoded_by :latitude, :longitude
-  # after_validation :reverse_geocode
+  reverse_geocoded_by :latitude, :longitude
+  after_validation :reverse_geocode
 end
