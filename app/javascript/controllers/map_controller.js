@@ -4,7 +4,7 @@ import mapboxgl from 'mapbox-gl'
 export default class extends Controller {
   static values = {
     apiKey: String,
-    markers: Array
+    pins: Array
   }
 
   connect() {
@@ -17,30 +17,33 @@ export default class extends Controller {
       style: "mapbox://styles/mapbox/satellite-v9",
       attributionControl: false,
     })
-    this.#addMarkersToMap()
-    this.#fitMapToMarkers()
+    this.#addPinsToMap()
+    this.#fitMapToPins()
     this.#setMaxBounds()
   }
   
-  #addMarkersToMap() {
-    this.markersValue.forEach((marker) => {
-      // Custom marker icon
-      const customMarker = document.createElement('div');
-      customMarker.className = 'custom-marker';
-      customMarker.style.backgroundImage = 'url(/assets/marker.png)';
-      customMarker.style.width = '50px';
-      customMarker.style.height = '50px';
-      customMarker.style.backgroundSize = 'cover';
+  #addPinsToMap() {
+    this.pinsValue.forEach((pin) => {
+      // Custom pin icon
+      const customPin = document.createElement('div');
+      customPin.className = 'custom-pin';
+      customPin.style.backgroundImage = 'url(/assets/marker.png)';
+      customPin.style.width = '50px';
+      customPin.style.height = '50px';
+      customPin.style.backgroundSize = 'cover';
 
-      new mapboxgl.Marker(customMarker)
-        .setLngLat([marker.lng, marker.lat])
+      const popup = new mapboxgl.Popup().setHTML(`<h3>${pin.name}</h3><p>${pin.description}</p>`);
+
+      new mapboxgl.Marker(customPin)
+        .setPopup(popup)
+        .setLngLat([pin.longitude, pin.latitude])
         .addTo(this.map);
     });
   }
 
-  #fitMapToMarkers() {
+  #fitMapToPins() {
     const bounds = new mapboxgl.LngLatBounds()
-    this.markersValue.forEach(marker => bounds.extend([marker.lng, marker.lat]))
+    this.pinsValue.forEach(pin => bounds.extend([pin.longitude, pin.latitude]))
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
   }
 

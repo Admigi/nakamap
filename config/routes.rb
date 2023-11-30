@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   resources :pins, only: %i[index show], as: "map"
+
   
 end
