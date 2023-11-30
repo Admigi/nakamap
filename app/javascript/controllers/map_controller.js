@@ -14,7 +14,8 @@ export default class extends Controller {
       container: this.element,
       maxZoom: 15,
       minZoom: 5,
-      style: "mapbox://styles/mapbox/satellite-v9"
+      style: "mapbox://styles/mapbox/satellite-v9",
+      attributionControl: false,
     })
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
