@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_28_155021) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_29_215444) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -38,7 +38,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_28_155021) do
     t.bigint "region_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "post_id", null: false
+    t.bigint "post_id"
+    t.string "address"
     t.index ["categorie_id"], name: "index_pins_on_categorie_id"
     t.index ["post_id"], name: "index_pins_on_post_id"
     t.index ["region_id"], name: "index_pins_on_region_id"
