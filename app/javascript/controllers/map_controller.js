@@ -21,7 +21,7 @@ export default class extends Controller {
     this.#fitMapToPins()
     this.#setMaxBounds()
   }
-  
+
   #addPinsToMap() {
     this.pinsValue.forEach((pin) => {
       // Custom pin icon
@@ -52,7 +52,7 @@ export default class extends Controller {
       [122.934570, 24.396308],
       [153.986672, 45.551483]
     );
-  
+
     this.map.setMaxBounds(maxBounds);
   }
 }

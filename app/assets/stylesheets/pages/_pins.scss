@@ -2,7 +2,7 @@
     max-width: 1600px;
     margin: 0 auto;
   }
-  
+
   .map-container {
     width: 1600px;
     height: 1050px;
@@ -14,7 +14,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
   }
-  
+
    /* Style for the mascot container */
    .mascot-container {
     position: absolute;
@@ -22,7 +22,7 @@
     left: 20px;
     width: 350px;
     height: 450px;
-    background: url('/assets/mascott.png') no-repeat center center;
+    background-image: asset-url("mascott.png") no-repeat center center;
     background-size: cover;
     border-radius: 50%;
     z-index: 1;
@@ -53,4 +53,3 @@
 .mapboxgl-ctrl-logo {
     display: none !important;
 }
-
