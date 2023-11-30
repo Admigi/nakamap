@@ -32,7 +32,7 @@ export default class extends Controller {
       customPin.style.height = '50px';
       customPin.style.backgroundSize = 'cover';
 
-      const popup = new mapboxgl.Popup().setHTML(`<h3>${pin.name}</h3><p>${pin.description}</p>`);
+      const popup = new mapboxgl.Popup().setHTML(`<h3>${pin.name}</h3><p>${pin.description}</p><a href="/posts/${pin.post_id}">View Post</a>`);
 
       new mapboxgl.Marker(customPin)
         .setPopup(popup)
