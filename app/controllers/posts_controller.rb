@@ -8,6 +8,8 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @pin = Pin.find(params[:pin_id])
+    redirect_to root_path unless @post.pin == @pin
   end
 
   def new
