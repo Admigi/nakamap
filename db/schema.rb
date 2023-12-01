@@ -74,13 +74,10 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_30_223412) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.text "content"
+    t.string "content"
     t.string "multimedia"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "title"
-    t.string "subtitle"
-    t.text "links"
   end
 
   create_table "regions", force: :cascade do |t|
