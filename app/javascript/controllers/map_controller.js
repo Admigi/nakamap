@@ -21,29 +21,28 @@ export default class extends Controller {
     this.#fitMapToPins()
     this.#setMaxBounds()
   }
-  
+
   #addPinsToMap() {
     this.pinsValue.forEach((pin) => {
       // Custom pin icon
       const customPin = document.createElement('div');
-      customPin.className = 'custom-pin';
-      customPin.style.backgroundImage = 'url(/assets/marker.png)';
-      customPin.style.width = '50px';
-      customPin.style.height = '50px';
-      customPin.style.backgroundSize = 'cover';
+      customPin.innerHTML = pin.marker_html;
+      // customPin.style.width = '50px';
+      // customPin.style.height = '50px';
+      // customPin.style.backgroundSize = 'cover';
 
-      const popup = new mapboxgl.Popup().setHTML(`<h3>${pin.name}</h3><p>${pin.description}</p><a href="/posts/${pin.post_id}">View Post</a>`);
+      const popup = new mapboxgl.Popup().setHTML(pin.info_window_html);
 
       new mapboxgl.Marker(customPin)
+        .setLngLat([pin.lng, pin.lat])
         .setPopup(popup)
-        .setLngLat([pin.longitude, pin.latitude])
         .addTo(this.map);
     });
   }
 
   #fitMapToPins() {
     const bounds = new mapboxgl.LngLatBounds()
-    this.pinsValue.forEach(pin => bounds.extend([pin.longitude, pin.latitude]))
+    this.pinsValue.forEach(pin => bounds.extend([pin.lng, pin.lat]))
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
   }
 
@@ -52,7 +51,7 @@ export default class extends Controller {
       [122.934570, 24.396308],
       [153.986672, 45.551483]
     );
-  
+
     this.map.setMaxBounds(maxBounds);
   }
 }

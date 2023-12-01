@@ -9,7 +9,7 @@
       </ul>
       <ul class="action">
         <li><a href="#">
-            <ion-icon name="language-outline"></ion-icon>         
+            <ion-icon name="language-outline"></ion-icon>
           </a></li>
         <li><a href="#">
             <ion-icon name="log-out-outline"></ion-icon>
@@ -22,6 +22,6 @@
         <div class="speech-bubble">
           <h1>Hello, explorer! <br/><br/>👋 Welcome to Nakamap,<br/>your gateway to the beauty of Japan. I'm here to help you navigate this map and unlock the wonders of different regions.</h1>
         </div>
-    <div class="map-container" data-controller="map" data-map-pins-value="<%= @pins.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" data-map-boundaries-value="<%= @map_boundaries.to_json %>">
+    <div class="map-container" data-controller="map" data-map-pins-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" data-map-boundaries-value="<%= @map_boundaries.to_json %>">
     </div>
   </div>
