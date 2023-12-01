@@ -21,42 +21,42 @@
 ::-webkit-scrollbar {
     width: 15px;
   }
-  
+
   /* button */
   ::-webkit-scrollbar-button {
     display: none;
   }
-  
+
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #0007; 
+    background: #0007;
   }
-  
+
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #0009; 
+    background: #0009;
   }
-  
+
   ::-webkit-scrollbar-thumb:hover ::-webkit-scrollbar {
     width: 15px;
   }
-  
+
   /* Track */
   ::-webkit-scrollbar-track {
-    background: #0005; 
+    background: #0005;
   }
-  
+
   /* Corner */
   ::-webkit-scrollbar-corner {
     display: none;
   }
-  
+
   /* Resizer */
   ::-webkit-resizer {
-    background: #999; 
+    background: #999;
   }
-  
-  
+
+
 /*=============== CORE ===============*/
 
   * {
@@ -64,11 +64,11 @@
     padding: 0;
     box-sizing: border-box;
   }
-  
+
   html {
     font-family: 'Urbanist', sans-serif;
   }
-  
+
 /*=============== HEADER ===============*/
 
   header {
@@ -80,7 +80,7 @@
     align-items: center;
     z-index: 2;
   }
-  
+
   header .logo {
     position: relative;
     color: #FF4E58;
@@ -88,14 +88,14 @@
     font-weight: 700;
     font-size: 2em;
   }
-  
+
   .group {
     position: relative;
     display: flex;
     justify-content: space-between;
     gap: 438px;
   }
-  
+
 .group .navigation,
 .group .action {
     display: flex;
@@ -108,7 +108,7 @@
 .group .navigation li {
     white-space: nowrap;
 }
-  
+
   .group ul li {
     list-style-type: none;
   }
@@ -119,25 +119,25 @@
     font-weight: 800;
     transition: color 0.3s ease;
   }
-  
+
   .group ul li a:hover {
     color: #FF4E58;
   }
-  
+
   .group .action {
     margin-left: 20px;
   }
-  
+
   .group .action li a {
     font-size: 1.25em;
-  } 
-  
+  }
+
   .banner {
     position: relative;
     width: 100%;
     padding: 0 100px;
   }
-  
+
   .banner .bg {
     position: relative;
     width: 100%;
@@ -146,7 +146,7 @@
     justify-content: center;
     align-items: center;
   }
-  
+
   .cover {
     position: absolute;
     top: 0;
@@ -155,7 +155,7 @@
     height: 100%;
     object-fit: cover ;
   }
-  
+
   .content {
     position: relative;
     display: flex;
@@ -163,7 +163,7 @@
     align-items: center;
     flex-direction: column;
   }
-  
+
 .content h2 {
     position: relative;
     font-size: 6em;
@@ -175,7 +175,7 @@
         color: #FF4E58;
     }
 }
-  
+
   .btn {
     display: inline-block;
     color: #252525;
@@ -184,9 +184,11 @@
     font-size: 1.1em;
     margin-top: 20px;
     letter-spacing: 2px;
-  } 
+  }
 
   .cta-button {
+    background-color: white;
+    opacity: 0.8;
     position: absolute;
     bottom: 20px;
     left: 20px;
@@ -241,7 +243,7 @@
 
 .how-it-works-content-item{
   p {
-    text-align: center; 
+    text-align: center;
     color: #252525;
     font-size: 30px;
     font-family: Urbanist;
@@ -289,4 +291,3 @@
 }
 
 /*=============== CAROUSEL ===============*/
-
