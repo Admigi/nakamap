@@ -1,1 +1,6 @@
-
+<div class="pin-popup">
+  <h3 class="title"><%= pin.name %></h3>
+  <p class="subtitle"><%= pin.description %></p>
+  <a class="more" href="/posts/<%= pin.post_id %>">View Post</a>
+  <%= link_to "Take Katana Quiz", challenges_show_path, class: "more" %>
+</div>
