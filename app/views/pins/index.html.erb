@@ -19,9 +19,11 @@
   </header>
   <div class="wrapper">
       <div class="mascot-container"></div>
-        <div class="speech-bubble">
-          <h1>Hello, explorer! <br/><br/>👋 Welcome to Nakamap,<br/>your gateway to the beauty of Japan. I'm here to help you navigate this map and unlock the wonders of different regions.</h1>
+        <div class="speech-bubble" data-controller="speech">
+            <h1 data-speech-target="text">🌏 Hello, explorer! Welcome to Nakamap, your gateway to the beauty of Japan. I'm your guide on this exciting journey.</h1>
+            <button data-action="click->speech#next">➤</button>
         </div>
     <div class="map-container" data-controller="map" data-map-pins-value="<%= @pins.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" data-map-boundaries-value="<%= @map_boundaries.to_json %>">
+        <div class="pin" data-action="mouseover->speech#updateText" data-pin-id="1"></div>
     </div>
   </div>

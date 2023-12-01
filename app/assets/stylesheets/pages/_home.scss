@@ -117,6 +117,7 @@
     color: #222222;
     margin-left: 30px;
     font-weight: 800;
+    transition: color 0.3s ease;
   }
   
   .group ul li a:hover {
@@ -215,7 +216,6 @@
   font-weight: 700;
   line-height: normal;
   transition: color 0.3s ease;
-  background-color: transparent;
 }
 
 .cta-link:hover {
