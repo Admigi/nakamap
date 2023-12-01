@@ -50,7 +50,9 @@
   <section class="section">
   <div class="banner">
     <div class="bg">
-      <img src="../assets/images/bg.png" alt="" class="cover">
+      <div class="background">
+        <%= image_tag "bg.png" %>
+      </div>
       <div class="content">
         <h2>Begin your <span>journey</span> into Japan's Soul and <span>unveil Japan’s beauty.</span></h2>
         <a href="#" class="btn">Scroll<ion-icon name="chevron-down-outline" style="vertical-align: middle;"></ion-icon></a>
@@ -58,7 +60,7 @@
 
     <!-- CTA button -->
     <div class="cta-button">
-        <a href="#" class="cta-link">
+        <a href="<%= map_index_path %>" class="cta-link">
         START EXPLORING
         </a>
     </div>
