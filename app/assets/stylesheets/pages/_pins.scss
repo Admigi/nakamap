@@ -18,11 +18,11 @@
    /* Style for the mascot container */
   .mascot-container {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: -20px;
+    left: -100px;
     width: 350px;
     height: 450px;
-    background: url("/assets/mascott.png") no-repeat center center;
+    // background: url("/assets/images/mascott.png") no-repeat center center;
     background-size: cover;
     border-radius: 50%;
     z-index: 1;
