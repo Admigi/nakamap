@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'challenges/show'
   devise_for :users
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -12,5 +13,6 @@ Rails.application.routes.draw do
 
   resources :pins, only: %i[index show], as: "map"
   resources :posts
-  
+  resources :challenges, only: [:show]
+
 end
