@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   resources :pins, only: %i[index show], as: "map"
   resources :posts
   resources :challenges, only: [:show]
-
+  resources :badges
+  resources :userbadges
 end
