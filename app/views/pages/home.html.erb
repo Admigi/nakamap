@@ -3,16 +3,13 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="keywords" content="travel, japan, journey, virtual tour">
   <meta name="description" content="Start your journey through Japan!">
   <!-- googlefont import -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,regular,500,700" rel="stylesheet" />
-
-  <!-- image preload -->
-  <link rel="preload" as="image" href="../assets/images/bg.png">
 
   <title>Nakamap</title>
 </head>
@@ -28,18 +25,31 @@
       </ul>
       <ul class="action">
         <li><a href="#">
-            <ion-icon name="language-outline"></ion-icon>         
+            <ion-icon name="language-outline"></ion-icon>
           </a></li>
-        <li><a href="#">
-            <ion-icon name="log-out-outline"></ion-icon>
-           </a></li>
+
+          <% if user_signed_in? %>
+            <li>
+              <%= link_to destroy_user_session_path, data: {turbo_method: :delete} do %>
+                <ion-icon name="log-out-outline"></ion-icon>
+              <% end %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to new_user_session_path do %>
+                <ion-icon name="log-in-outline"></ion-icon>
+          <% end %>
+  </li>
+<% end %>
       </ul>
     </div>
   </header>
   <section class="section">
   <div class="banner">
     <div class="bg">
-      <img src="../assets/images/bg.png" alt="" class="cover">
+      <div class="background">
+        <%= image_tag "bg.png" %>
+      </div>
       <div class="content">
         <h2>Begin your <span>journey</span> into Japan's Soul and <span>unveil Japan’s beauty.</span></h2>
         <a href="#" class="btn">Scroll<ion-icon name="chevron-down-outline" style="vertical-align: middle;"></ion-icon></a>
@@ -47,12 +57,12 @@
 
     <!-- CTA button -->
     <div class="cta-button">
-        <a href="#" class="cta-link">
-        START EXPLORING
+        <a href="<%= map_index_path %>" class="cta-link">
+        EXPLORE NOW!
         </a>
     </div>
     </section>
-    
+
   <!-- How It Works Section -->
   <section class="how-it-works section">
     <div class="how-it-works-content">

@@ -1,0 +1,55 @@
+  <header>
+    <div class="group">
+    <a href="<%= root_path %>" class="logo">Nakamap</a>
+      <ul class="navigation">
+        <li><a href="<%= map_index_path %>">Explore</a></li>
+        <li><a href="#">Challenges</a></li>
+        <li><a href="#">About us</a></li>
+      </ul>
+      <ul class="action">
+        <li><a href="#">
+            <ion-icon name="language-outline"></ion-icon>         
+          </a></li>
+        <li><a href="#">
+            <ion-icon name="log-out-outline"></ion-icon>
+           </a></li>
+      </ul>
+    </div>
+  </header>
+
+<div>
+  <div>
+    <span class="timestamp"><%= @post.created_at.strftime("%B %d, %Y") %></span>
+    <h3 class="title"><%= @post.pin.name %></h3>
+    <h2 class="subtitle">THE KATANA (JAPANESE SWORD)</h2>
+    <h1 class="intro-p">The first use of the term katana to describe a sword occurs as early as the Kamakura period (1185–1333), but the actual history of bladed weapon craftsmanship in Japan stretches back over twenty centuries. At first, Japanese swords were simple variations of the Chinese swords that were straight, double-edged iron blades. The first original Japanese swords that are considered the precursor of the 'modern' katana began to appear during the early Heian period (around 700 CE).</h1>
+      <div class="grid">
+          <p>Katana were mainly used by the samurai, the military nobility of feudal Japan (1185-1600) up through the Edo period (1603–1868). The increased popularity of the katana among samurai came about because of the changing nature of close-combat warfare. The quicker draw of this sword was well suited to combat where victory depended heavily on fast response times. The katana was worn thrust through a belt-like sash (obi) with the sharpened edge facing up. Ideally, samurai could draw the sword and cut the enemy in a single motion.</p>
+          <p>With the end of the Edo period and the beginning of Meiji period, Japan began a rapid process of industrialization and westernization. Regarding the military, the weapons shifted from sword to firearm. The use of the katana in Japanese daily life came to an end at almost the same time with the Haitōrei (sword prohibition) Edict of 1876, which allowed only police and military personnel to carry them.  Many of the swordsmiths were required to close their businesses, leading to the near extinction of katana sworesdsmithing until 1906. At that time, two well-known swordsmiths were appointed as imperial household artists, thus preserving the skills of the swordsmiths, a cultural legacy that has been passed on to the present day.</p>
+          <div class="img-article">
+      </div>
+  </div>
+  <div class="quote" style="background: #383838">
+    <h2 class="subtitle">THE PROCESS OF MAKING A KATANA</h2>
+          <p class="intro-p">The katana forging process requires skill, perseverance, and plenty of patience.</p>
+          <ul class="article-list">
+            <li>𐑂<strong>Preparation:</strong> Preparation of raw materials (charcoal and metals) and equipment (making necessary tools, heating the furnace)</li>
+            <li>𐑂<strong>Tanren:</strong> Forging the raw steel into workable blocks</li>
+            <li>𐑂<strong>Tsukurikomi & Sunobe:</strong> Combining the hard steel for the outer layer and softer steel for the core. Creating the sunobe – a sword blank</li>
+            <li>𐑂<strong>Hizukuri:</strong> Forming the final shape of the sword</li>
+            <li>𐑂<strong>Arashiage:</strong> Rough finishing including straightening and flattening the blade</li>
+            <li>𐑂<strong>Tsuchioki:</strong> Applying clay to the blade to prepare creating the hamon, the pattern along the cutting edge</li>
+            <li>𐑂<strong>Yaki-ire:</strong> Heat-treating the blade to create the hamon</li>
+            <li>𐑂<strong>Shiage:</strong> Final finishing of the blade, including correcting warps and bends caused by yaki ire</li>
+            <li>𐑂<strong>Hi & Horimono:</strong> Carving grooves and engravings, either for decoration or to make the blade lighter</li>
+            <li>𐑂<strong>Nakago & Maikiri:</strong> Finishing and signing the tang (the base below the actual blade)</li>
+          </ul>
+          <a class="more" href="#" target="_blank">Learn more 🠖</a>
+    <div class="links-container" style="width: 700px; height: 200px; background: #252525; border-radius: 15px">
+      <h1 class="links-title">RELATED ARTICLES</h1>
+      <a href="https://www.toki.tokyo/experience/katana" target="_blank" class="links">WITNESS THE MAKING OF JAPANESE KATANA SWORDS</a>  
+      <a href="https://www.toki.tokyo/shop/katana" target="_blank" class="links">PURCHASE A KATANA</a>
+      <a href="https://www.toki.tokyo/artisan-stories/yoshindo-yoshihara" target="_blank" class="links">ARTISAN INTERVIEW- YOSHINDO YOSHIHARA</a>
+    </div>
+  </div>
+</div>

@@ -4,7 +4,7 @@ import mapboxgl from 'mapbox-gl'
 export default class extends Controller {
   static values = {
     apiKey: String,
-    markers: Array
+    pins: Array
   }
 
   connect() {
@@ -14,32 +14,35 @@ export default class extends Controller {
       container: this.element,
       maxZoom: 15,
       minZoom: 5,
-      style: "mapbox://styles/mapbox/satellite-v9"
+      style: "mapbox://styles/mapbox/satellite-v9",
+      attributionControl: false,
     })
-    this.#addMarkersToMap()
-    this.#fitMapToMarkers()
+    this.#addPinsToMap()
+    this.#fitMapToPins()
     this.#setMaxBounds()
   }
-  
-  #addMarkersToMap() {
-    this.markersValue.forEach((marker) => {
-      // Custom marker icon
-      const customMarker = document.createElement('div');
-      customMarker.className = 'custom-marker';
-      customMarker.style.backgroundImage = 'url(/assets/marker.png)';
-      customMarker.style.width = '50px';
-      customMarker.style.height = '50px';
-      customMarker.style.backgroundSize = 'cover';
 
-      new mapboxgl.Marker(customMarker)
-        .setLngLat([marker.lng, marker.lat])
+  #addPinsToMap() {
+    this.pinsValue.forEach((pin) => {
+      // Custom pin icon
+      const customPin = document.createElement('div');
+      customPin.innerHTML = pin.marker_html;
+      // customPin.style.width = '50px';
+      // customPin.style.height = '50px';
+      // customPin.style.backgroundSize = 'cover';
+
+      const popup = new mapboxgl.Popup().setHTML(pin.info_window_html);
+
+      new mapboxgl.Marker(customPin)
+        .setLngLat([pin.lng, pin.lat])
+        .setPopup(popup)
         .addTo(this.map);
     });
   }
 
-  #fitMapToMarkers() {
+  #fitMapToPins() {
     const bounds = new mapboxgl.LngLatBounds()
-    this.markersValue.forEach(marker => bounds.extend([marker.lng, marker.lat]))
+    this.pinsValue.forEach(pin => bounds.extend([pin.lng, pin.lat]))
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
   }
 
@@ -48,7 +51,7 @@ export default class extends Controller {
       [122.934570, 24.396308],
       [153.986672, 45.551483]
     );
-  
+
     this.map.setMaxBounds(maxBounds);
   }
 }

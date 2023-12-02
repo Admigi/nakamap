@@ -8,16 +8,17 @@ class PinsController < ApplicationController
     @markers = @pins.geocoded.map do |pin|
       {
         lat: pin.latitude,
-        lng: pin.longitude
+        lng: pin.longitude,
+        marker_html: render_to_string(partial: "pin"),
+        info_window_html: render_to_string(partial: "info_window", locals: { pin: pin })
       }
     end
   end
 
   def show
     @pin = Pin.find(params[:id])
-    @post = Pin.post
+    redirect_to root_path unless @post.pin == params[:pin_id]
   end
-
 
 
   private

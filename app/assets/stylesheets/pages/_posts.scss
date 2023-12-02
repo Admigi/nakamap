@@ -1,0 +1,154 @@
+.timestamp {
+  text-align: center;
+  color: #7E7E7E;
+  font-size: 10px;
+  font-family: Urbanist;
+  font-weight: 500;
+  padding-top: 50px;
+  padding-left: 100px;
+  padding-bottom: 5px;
+  word-wrap: break-word;
+}
+
+.intro-p {
+  color: #7E7E7E;
+  font-size: 25px;
+  font-family: Urbanist;
+  font-weight: 300;
+  word-wrap: break-word;
+  padding-left: 100px;
+  padding-bottom: 30px;
+}
+
+.img-article {
+  background: url('/app/assets/images/katana_craft.jpg');
+}
+.subtitle {
+  text-align: justify;
+  color: #252525;
+  font-size: 25px;
+  font-family: Urbanist;
+  font-weight: 500;
+  word-wrap: break-word;
+  padding-left: 100px;
+  padding-bottom: 5px;
+}
+
+.title {
+  text-align: center;
+  color: #252525;
+  font-size: 62px;
+  font-family: Urbanist;
+  font-weight: 800;
+  word-wrap: break-word;
+  padding-left: 100px;
+  padding-top: 60px;
+  padding-bottom: 150px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 600px);
+  grid-gap: 20px;
+  p {
+    text-align: justify;
+    width: 605px;
+    color: #7E7E7E;
+    font-size: 20px;
+    font-family: Urbanist;
+    font-weight: 300;
+    word-wrap: break-word;
+    padding-left: 100px;
+    max-height: 680px;
+    overflow: hidden;
+    padding-bottom: 100px;
+    padding-top: 30px;
+  }
+}
+.quote {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+
+  span {
+    width: 945px;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    text-align: left;
+    color: white;
+    font-size: 20px;
+    font-family: Urbanist;
+    font-weight: 300;
+    word-wrap: break-word;
+  }
+  li {
+    text-align: justify;
+    width: 605px;
+    color: white;
+    font-size: 15px;
+    font-family: Urbanist;
+    font-weight: 300;
+    word-wrap: break-word;
+    padding-bottom: 15px;
+    max-height: 680px;
+    overflow: hidden;
+    &:last-child {
+      padding-bottom: 20px;
+    }
+  }
+  ul {
+    padding-left: 100px;
+    color: white;
+    padding-top: 12px;
+  }
+  .more {
+  padding-left: 100px;
+  margin-top: 5px;
+  color: #A45CFF;
+  font-size: 30px;
+  font-family: Urbanist;
+  font-weight: 500;
+  word-wrap: break-word;
+  padding-bottom: 20px;
+  }
+  .subtitle {
+    color: white;
+  }
+  .intro-p {
+    color: #9BC9FF;
+  }
+}
+
+  .links-container {
+    width: 700px;
+    height: 200px;
+    background: #252525;
+    border-radius: 15px;
+    margin: 0 auto;
+  .links-title {
+    padding: 15px;
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    font-family: Urbanist;
+    font-weight: 700;
+    word-wrap: break-word;
+  }
+  .links {
+    display: flex;
+    align-items: left;
+    margin: 15px;
+    color: white;
+    font-size: 15px;
+    font-family: Urbanist;
+    font-weight: 300;
+    word-wrap: break-word;
+    text-decoration: underline;
+
+    &:nth-child(1) {
+      padding-top: 15px;
+    }
+  }
+}
