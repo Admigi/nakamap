@@ -1,0 +1,37 @@
+<%= form_with(model: userbadge, local: true) do |form| %>
+  <% if userbadge.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(userbadge.errors.count, "error") %> prohibited this userbadge from being saved:</h2>
+
+      <ul>
+        <% userbadge.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :userbadge_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :userbadge_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.collection_select :user_id, User.all, :id, :username, prompt: 'Select User' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :badge_id %>
+    <%= form.collection_select :badge_id, Badge.all, :id, :name, prompt: 'Select Badge' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

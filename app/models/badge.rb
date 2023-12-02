@@ -1,7 +1,9 @@
 class Badge < ApplicationRecord
   has_many :userbadges
+  has_many :users, through: :userbadges
+
+  has_one_attached :image
 
   validates :name, presence: true
   validates :description, presence: true
-  validates :image_url, presence: true, uniqueness: true
 end

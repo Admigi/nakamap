@@ -1,16 +1,13 @@
 /*=============== REUSABLE CSS CLASSES ===============*/
-.container {
-  max-width: 1120px;
-  margin-inline: 1.5rem;
-}
-
 .grid {
   display: grid;
   gap: 1.5rem;
 }
 
 .section {
-  padding-block: 4rem 2rem;
+  position: relative;
+  padding: 2rem 0;
+  width: 100%;
 }
 
 
@@ -70,159 +67,153 @@
   }
 
 /*=============== HEADER ===============*/
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 30px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  background-color: #f4f4f4;
+}
 
-  header {
-    position: relative;
-    width: 100%;
-    padding: 30px 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 2;
-  }
+header .logo {
+  position: relative;
+  color: #FF4E58;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 2em;
+}
 
-  header .logo {
-    position: relative;
-    color: #FF4E58;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 2em;
-  }
-
-  .group {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    gap: 438px;
-  }
+.group {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 438px;
+}
 
 .group .navigation,
 .group .action {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  font-size: 24px;
 }
 
 .group .navigation li {
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
-  .group ul li {
-    list-style-type: none;
-  }
-  .group ul li a {
-    text-decoration: none;
-    color: #222222;
-    margin-left: 30px;
-    font-weight: 800;
-    transition: color 0.3s ease;
-  }
+.group ul li {
+  list-style-type: none;
+}
+.group ul li a {
+  text-decoration: none;
+  color: #222222;
+  margin-left: 30px;
+  font-weight: 800;
+  transition: color 0.3s ease;
+}
 
-  .group ul li a:hover {
-    color: #FF4E58;
-  }
+.group ul li a:hover {
+  color: #FF4E58;
+}
 
-  .group .action {
-    margin-left: 20px;
-  }
+.group .action {
+  margin-left: 20px;
+}
 
-  .group .action li a {
-    font-size: 1.25em;
-  }
+.group .action li a {
+  font-size: 1.25em;
+}
+.banner {
+  position: relative;
+  width: 100%;
+}
 
-  .banner {
-    position: relative;
-    width: 100%;
-    padding: 0 100px;
-  }
+.banner .bg {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
 
-  .banner .bg {
-    position: relative;
-    width: 100%;
-    height: 75vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .cover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover ;
-  }
-
-  .content {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
+.content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
 
 .content h2 {
-    position: relative;
-    font-size: 6em;
-    color: #252525;
-    text-align: center;
-    font-weight: 800;
-
-    span {
-        color: #FF4E58;
-    }
+  width: 1380px;
+  position: relative;
+  font-size: 5em;
+  color: #252525;
+  text-align: center;
+  font-weight: 800;
+  span {
+    color: #FF4E58;
+  }
 }
 
-  .btn {
-    display: inline-block;
-    color: #252525;
-    padding: 20px 40px;
-    text-decoration: none;
-    font-size: 1.1em;
-    margin-top: 20px;
-    letter-spacing: 2px;
-  }
+.btn {
+  display: inline-block;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-size: 1em;
+  margin-top: 20px;
+  letter-spacing: 1px;
+}
 
-  .cta-button {
-    background-color: white;
-    opacity: 0.8;
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    width: 329px;
-    height: 102px;
-    border: 2px solid #252525;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 10px;
-    margin-left: 20px;
-    box-sizing: border-box;
-    transition: background-color 0.3s ease;
+
+.cta-button {
+  background-color: white;
+  opacity: 0.8;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 229px;
+  height: 70px;
+  border: 2px solid #252525;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
 }
 
 .cta-button:hover {
-    background-color: #252525;
+  background-color: #252525;
 }
 
 .cta-link {
   text-decoration: none;
   color: #252525;
   font-family: 'Urbanist', sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  transition: color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.cta-link:hover {
+.cta-button:hover .cta-link {
+  background-color: transparent;
   color: white;
 }
+  
 
 /*=============== HOW IT WORKS ===============*/
 
