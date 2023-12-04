@@ -12,11 +12,13 @@ class DashboardsController < ApplicationController
 
   def update
     @user = current_user
+
     if @user.update(user_params)
-      # Redirect to the dashboard show page after a successful update
-      redirect_to dashboards_path, notice: 'Profile updated successfully.'
+      # If the user has uploaded a new image, attach it to the user
+      @user.image_url.attach(params[:user][:image_url]) if params[:user][:image_url].present?
+
+      redirect_to dashboards_path(@user), notice: 'Profile updated successfully.'
     else
-      # If update fails, render the edit form again
       render :edit
     end
   end
@@ -24,8 +26,7 @@ class DashboardsController < ApplicationController
   private
 
   def user_params
-    # Define the allowed parameters for updating the user (e.g., :username, :bio, :photo)
-    params.require(:user).permit(:username, :bio, :photo)
+    params.require(:user).permit(:username, :bio, :image_url)
   end
 
   def badge_count(badge)

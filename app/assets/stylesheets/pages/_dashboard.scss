@@ -15,6 +15,7 @@
     }
   
     img {
+      object-fit: cover;
       width: 100px;
       height: 100px;
       border-radius: 8px;
@@ -118,12 +119,63 @@
   }
   
   .bio-container {
-    h1 {
+    span {
       color: #252525;
-      font-size: 30px;
+      font-size: 20px;
       font-family: Urbanist;
       font-weight: 500;
       margin-bottom: 10px;
     }
   }
   
+  .achievements-title {
+    font-weight: 700;
+    font-size: 40px;
+    color: #252525;
+  }
+
+  .profile-picture {
+    background-size: cover;
+    width: 295.95px;
+    height: 295.95px;
+    border-radius: 300px;
+    border: 5px #252525 solid;
+  }
+
+  .status-button {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    fill: #A1FF89;
+    stroke-width: 2px;
+    stroke: #252525;
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    border-radius: 300px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    &.online {
+      background-color: #A1FF89;
+    }
+  
+    &.idle {
+      background-color: #d78826;
+    }
+  
+    &.donotdisturb {
+      background-color: #e74c3c;
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .user-profile {
+    position: relative;
+    display: inline-block;
+  }
