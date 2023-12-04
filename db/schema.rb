@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_04_145645) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_04_161927) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -76,6 +76,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_04_145645) do
     t.string "selected_option"
     t.text "questions"
     t.text "metadata", default: "{}", null: false
+    t.string "name"
   end
 
   create_table "choices", force: :cascade do |t|
@@ -119,19 +120,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_04_145645) do
     t.string "title"
     t.string "subtitle"
     t.text "links"
-  end
-
-  create_table "questions", force: :cascade do |t|
-    t.bigint "challenge_id", null: false
-    t.text "question"
-    t.string "option_a"
-    t.string "option_b"
-    t.string "option_c"
-    t.string "correct_option"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "image"
-    t.index ["challenge_id"], name: "index_questions_on_challenge_id"
   end
 
   create_table "regions", force: :cascade do |t|
@@ -200,7 +188,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_04_145645) do
   add_foreign_key "pins", "categories", column: "categorie_id"
   add_foreign_key "pins", "posts"
   add_foreign_key "pins", "regions"
-  add_foreign_key "questions", "challenges"
   add_foreign_key "streetviews", "posts"
   add_foreign_key "user_achievements", "achievements"
   add_foreign_key "user_achievements", "users"
