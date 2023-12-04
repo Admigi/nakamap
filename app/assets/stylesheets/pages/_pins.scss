@@ -1,6 +1,9 @@
 .wrapper {
+    display: flex;
+    justify-content: center;
     max-width: 1600px;
     margin: 0 auto;
+    overflow-x: hidden;
   }
 
   .map-container {
@@ -186,12 +189,13 @@
 }
 
 
-.categorie_filter {
+.category-filters {
+  color: blue;
   position: absolute;
   width: 250px;
   height: 120px;
   z-index: 1;
   border : 1px solid black;
-  right: -10px;
+  right: 0px;
   bottom: -10px;
 }
