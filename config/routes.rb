@@ -13,7 +13,9 @@ Rails.application.routes.draw do
 
   resources :pins, only: %i[index show], as: "map"
   resources :posts
-  resources :challenges, only: [:show]
+  resources :challenges, only: %i[index show] do
+    post 'check_answer', on: :member
+  end
   resources :badges
   resources :userbadges
 end
