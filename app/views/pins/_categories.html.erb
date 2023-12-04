@@ -1,0 +1,6 @@
+<div class="category-filters">
+  <% @categories.each do |categorie| %>
+    <% link_class = (params[:categorie_id] == categorie.id) ? 'selected' : '' %>
+    <%= link_to categorie.name, map_index_path(categorie_id: categorie.id) %>
+  <% end %>
+</div>

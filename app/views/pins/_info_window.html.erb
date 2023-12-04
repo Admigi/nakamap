@@ -2,5 +2,6 @@
   <h3 class="title"><%= pin.name %></h3>
   <p class="subtitle"><%= pin.description %></p>
   <a class="more" href="/posts/<%= pin.post_id %>">View Post</a>
+  <span><%= pin.categorie.name %></span>
   <%= link_to "Take Katana Quiz", challenges_show_path, class: "more" %>
 </div>

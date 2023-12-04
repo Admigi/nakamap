@@ -16,7 +16,11 @@ export default class extends Controller {
       minZoom: 5,
       style: "mapbox://styles/mapbox/satellite-v9",
       attributionControl: false,
+      trackResize: true,
     })
+    const japanCenter = [137.7261, 35.5649];
+    this.map.setCenter(japanCenter);
+
     this.#addPinsToMap()
     this.#fitMapToPins()
     this.#setMaxBounds()

@@ -44,6 +44,7 @@ manga = Post.create(content: "Manga (漫画) are comics created in Japan, or by 
 kinkakuji = Post.create(content: "Kinkaku-ji (金閣寺, literally \"Temple of the Golden Pavilion\"), officially named Rokuon-ji (鹿苑寺, literally \"Deer Garden Temple\"), is a Zen Buddhist temple in Kyoto, Japan. It is one of the most popular buildings in Japan, attracting a large number of visitors annually. It is designated as a National Special Historic Site, a National Special Landscape and is one of 17 locations making up the Historic Monuments of Ancient Kyoto which are World Heritage Sites.", multimedia: "/assets/images/kinkakuji.jpg")
 katana = Post.create(content: "The katana (刀 or かたな) is a type of Japanese sword (日本刀, nihontō), also commonly referred to as a \"samurai sword\". The term katana may be applied to the standard size moderately curved Japanese sword with a blade length of greater than 60 cm (23.6 inches).", multimedia: "/assets/images/katana.jpg")
 kenrokuen = Post.create(content: "Kenroku-en (兼六園, Six Attributes Garden), located in Kanazawa, Ishikawa, Japan, is an old private garden. Along with Kairaku-en and Koraku-en, Kenroku-en is one of the Three Great Gardens of Japan. The garden is open year-round and charges an admission fee.", multimedia: "/assets/images/kenrokuen.jpg")
+test = Post.create(content: "Test", multimedia: "/assets/images/kenrokuen.jpg")
 
 puts "Create pins ..."
 
@@ -52,3 +53,4 @@ manga_pin = Pin.create!(name: "Manga", description: "Manga (漫画) are comics c
 kinkakuji_pin = Pin.create!(name: "Kinkaku-ji", description: "Kinkaku-ji (金閣寺, literally \"Temple of the Golden Pavilion\"), officially named Rokuon-ji (鹿苑寺, literally \"Deer Garden Temple\"), is a Zen Buddhist temple in Kyoto, Japan.", latitude: 35.0394, longitude: 135.7294, categorie: tradition, region: kansai, post: kinkakuji)
 katana_pin = Pin.create!(name: "Katana", description: "The katana (刀 or かたな) is a type of Japanese sword (日本刀, nihontō), also commonly referred to as a \"samurai sword\".", latitude: 43.061936, longitude: 141.3542924, categorie: craftmanship, region: hokkaido, post: katana)
 kenrokuen_pin = Pin.create!(name: "Kenroku-en", description: "Kenroku-en (兼六園, Six Attributes Garden), located in Kanazawa, Ishikawa, Japan, is an old private garden.", latitude: 36.5613, longitude: 136.6562, categorie: nature, region: chubu, post: kenrokuen)
+test_pin = Pin.create!(name: "Test", description: "Test", latitude: 33.15903155678625, longitude: 131.0443918953819, categorie: food, region: kyushu, post: test)
