@@ -1,14 +1,40 @@
 <h1>Welcome, <%= @user.username %></h1>
 
-<ul>
-  <li><strong>Name:</strong> <%= @user.username %></li>
-  <li><strong>Email:</strong> <%= @user.email %></li>
-  <li><strong>Points:</strong> <%= @user.points %></li>
-  <li><strong>Badges:</strong>
-    <ul>
+<div class="card-profile">
+  <div class="user-info">
+    <h1 class="card-name"><%= @user.username %></h1>
+    <div class="bio-container">
+      <span class="user-bio"><%= @user %></span>
+    </div>
+    <div class="button-container">
+      <%= button_to 'Edit profile', edit_dashboards_path, method: :get, class: 'custom-button' %>
+    </div>
+    <hr>
+  </div>
+
+  <div class="achievements-container">
+    <h2>Achievements:</h2>
+    <ul class="badge-list">
       <% @user.badges.each do |badge| %>
-        <li><%= badge.name %></li>
+        <li class="badge-container">
+          <%= image_tag badge.image if badge.image.attached? %>
+          <div class="badge-details">
+            <h3>
+              <strong><%= badge.name %></strong>
+            </h3>
+            <p>
+              <span class="badge-count"><%= badge_count(badge) %></span>
+            </p>
+            <p class="p-usn">
+              <%= "@#{current_user.username} - #{badge.description}" %>
+            </p>
+            <hr>
+            <p class="badge-history">
+              <span class="badge-unlocked">100% unlocked</span> · <span class="badge-date">Unlocked on <%= badge.created_at.strftime('%b %d, %Y') %></span>
+            </p>
+          </div>
+        </li>
       <% end %>
     </ul>
-  </li>
-
+  </div>
+</div>

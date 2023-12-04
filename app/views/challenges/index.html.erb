@@ -2,6 +2,6 @@
 
 <ul class="quote article-list">
   <% @challenges.each do |challenge| %>
-    <li><%= link_to challenge.question, challenge_path(challenge) %></li>
+    <li><%= link_to challenge.name, challenge_path(challenge) %></li>
   <% end %>
 </ul>
