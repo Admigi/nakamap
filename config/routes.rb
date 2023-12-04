@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  resources :dashboards, only: [:show]
+  resource :dashboards, only: [:show, :edit, :update]
   resources :pins, only: %i[index show], as: "map"
   resources :posts
   resources :challenges, only: %i[index show] do

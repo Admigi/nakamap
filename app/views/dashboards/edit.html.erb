@@ -1,0 +1,15 @@
+<h1>Edit Profile</h1>
+
+<%= form_for @user, url: dashboards_path, method: :patch, html: { multipart: true } do |f| %>
+  <!-- Add form fields for :username, :bio, and :photo -->
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+
+  <%= f.label :bio %>
+  <%= f.text_area :bio %>
+
+  <%= f.label :photo %>
+  <%= f.file_field :photo %>
+
+  <%= f.submit 'Update Profile' %>
+<% end %>

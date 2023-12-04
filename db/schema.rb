@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema[7.1].define(version: 2023_12_04_161927) do
+=======
 ActiveRecord::Schema[7.1].define(version: 2023_12_04_092518) do
+>>>>>>> 8d1e07ffc7956d235bb08ffc82b04ef93b19e29e
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -68,6 +72,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_04_092518) do
     t.string "selected_option"
     t.text "questions"
     t.text "metadata", default: "{}", null: false
+    t.string "name"
   end
 
   create_table "pins", force: :cascade do |t|
@@ -91,6 +96,12 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_04_092518) do
     t.string "multimedia"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
+    t.string "title"
+    t.string "subtitle"
+    t.text "links"
+=======
+>>>>>>> 8d1e07ffc7956d235bb08ffc82b04ef93b19e29e
   end
 
   create_table "regions", force: :cascade do |t|
