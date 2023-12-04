@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Nakamap</title>
+    <title>Nakamap - Begin your journey into Japan's Soul and unveil Japan’s beauty.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -17,7 +17,35 @@
 
   <body>
     <%= render "shared/flashes" %>
+    <header>
+        <div class="group">
+        <a href="/" class="logo">Nakamap</a>
+          <ul class="navigation">
+            <li><a href="<%= map_index_path %>">Explore</a></li>
+          <li><a href="<%= challenges_path %>">Challenges</a></li>
+            <li><a href="#">About us</a></li>
+          </ul>
+          <ul class="action">
+            <li><a href="#">
+                <ion-icon name="language-outline"></ion-icon>
+              </a></li>
 
+              <% if user_signed_in? %>
+                <li>
+                  <%= link_to destroy_user_session_path, data: {turbo_method: :delete} do %>
+                    <ion-icon name="log-out-outline"></ion-icon>
+                  <% end %>
+                </li>
+              <% else %>
+                <li>
+                  <%= link_to new_user_session_path do %>
+                    <ion-icon name="log-in-outline"></ion-icon>
+              <% end %>
+      </li>
+    <% end %>
+          </ul>
+        </div>
+      </header>
     <%= yield %>
   </body>
 </html>
