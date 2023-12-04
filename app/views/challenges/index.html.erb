@@ -1,6 +1,6 @@
-<h1>Challenges List</h1>
+<h1 class="subtitle">Challenges List</h1>
 
-<ul>
+<ul class="quote article-list">
   <% @challenges.each do |challenge| %>
     <li><%= link_to challenge.question, challenge_path(challenge) %></li>
   <% end %>

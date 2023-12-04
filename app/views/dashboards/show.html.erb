@@ -1,0 +1,14 @@
+<h1>Welcome, <%= @user.username %></h1>
+
+<ul>
+  <li><strong>Name:</strong> <%= @user.username %></li>
+  <li><strong>Email:</strong> <%= @user.email %></li>
+  <li><strong>Points:</strong> <%= @user.points %></li>
+  <li><strong>Badges:</strong>
+    <ul>
+      <% @user.badges.each do |badge| %>
+        <li><%= badge.name %></li>
+      <% end %>
+    </ul>
+  </li>
+

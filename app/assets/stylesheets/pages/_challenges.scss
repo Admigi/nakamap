@@ -1,0 +1,76 @@
+.challenge-form {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  }
+  
+  .question-card {
+    border-radius: 8px;
+    border: 2px solid #252525;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  
+    .card {
+      width: 100%;
+    }
+  
+    .card-body {
+      padding: 15px;
+    }
+  
+    h5.card-title {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+  
+    .options {
+      display: flex;
+      flex-direction: column;
+  
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  
+  .submit-button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  
+    &:hover {
+      background-color: #45a049;
+    }
+  }
+  
+  .submit-button {
+    background-color: white;
+    bottom: 20px;
+    left: 20px;
+    width: 229px;
+    height: 70px;
+    font-weight: 700;
+    color: #252525;
+    border: 2px solid #252525;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #252525;
+      color: white;
+    }
+  }
+  
