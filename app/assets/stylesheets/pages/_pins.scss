@@ -184,3 +184,14 @@
 .background {
   position: absolute;
 }
+
+
+.categorie_filter {
+  position: absolute;
+  width: 250px;
+  height: 120px;
+  z-index: 1;
+  border : 1px solid black;
+  right: -10px;
+  bottom: -10px;
+}

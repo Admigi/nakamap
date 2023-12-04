@@ -1,0 +1,29 @@
+<h1>Userbadges</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>User</th>
+      <th>Badge</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @userbadges.each do |userbadge| %>
+      <tr>
+        <td><%= userbadge.name %></td>
+        <td><%= userbadge.description %></td>
+        <td><%= userbadge.user.username %></td>
+        <td><%= userbadge.badge.name %></td>
+        <td><%= link_to 'Show', userbadge %></td>
+        <td><%= link_to 'Edit', edit_userbadge_path(userbadge) %></td>
+        <td><%= link_to 'Destroy', userbadge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Userbadge', new_userbadge_path %>

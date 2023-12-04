@@ -68,6 +68,7 @@ ritsurin_koen = Post.create(content: "Ritsurin Garden (栗林公園, Ritsurin K�
 korakuen = Post.create(content: "Kōraku-en (後楽園) is a Japanese garden located in Okayama, Okayama Prefecture. It is one of the Three Great Gardens of Japan, along with Kenroku-en and Kairaku-en. Korakuen was built in 1700 by Ikeda Tsunamasa, lord of Okayama.", multimedia: "/assets/images/korakuen.jpg")
 ryoanji = Post.create(content: "Ryōan-ji (竜安寺, The Temple of the Dragon at Peace) is a Zen temple located in northwest Kyoto, Japan. It belongs to the Myōshin-ji school of the Rinzai branch of Zen Buddhism. The Ryōan-ji garden is considered one of the finest surviving examples of kare-sansui (枯山水), a refined type of Japanese Zen temple garden design generally featuring distinctive larger rock formations arranged amidst a sweep of smooth pebbles arranged in immaculate linear patterns, designed to facilitate meditation.", multimedia: "/assets/images/ryoanji.jpg")
 kenrokuen = Post.create(content: "Kenroku-en (兼六園, Six Attributes Garden), located in Kanazawa, Ishikawa, Japan, is an old private garden. Along with Kairaku-en and Koraku-en, Kenroku-en is one of the Three Great Gardens of Japan. The garden is open year-round and charges an admission fee.", multimedia: "/assets/images/kenrokuen.jpg")
+test = Post.create(content: "Test", multimedia: "/assets/images/kenrokuen.jpg")
 
 puts "Create pins ..."
 
