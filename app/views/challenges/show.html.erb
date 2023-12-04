@@ -1,122 +1,14 @@
-  <header>
-    <div class="group">
-    <a href="<%= root_path %>" class="logo">Nakamap</a>
-      <ul class="navigation">
-        <li><a href="<%= map_index_path %>">Explore</a></li>
-        <li><a href="#">Challenges</a></li>
-        <li><a href="#">About us</a></li>
-      </ul>
-      <ul class="action">
-        <li><a href="#">
-            <ion-icon name="language-outline"></ion-icon>
-          </a></li>
-        <li><a href="#">
-            <ion-icon name="log-out-outline"></ion-icon>
-          </a></li>
-      </ul>
-    </div>
-  </header>
-  <style>
-
-    .quiz-container {
-      max-width: 600px;
-      width: 100%;
-      padding: 20px;
-      background-color: #fff;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-    }
-
-    h1 {
-      text-align: center;
-      color: #333;
-    }
-
-    .question {
-      margin-bottom: 15px;
-    }
-
-    .question p {
-      font-size: 18px;
-    }
-
-    .options ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    .options li {
-      margin-bottom: 10px;
-    }
-
-    .result {
-      margin-top: 15px;
-      background-color: #f8d7da;
-      color: #721c24;
-      padding: 10px;
-      border-radius: 4px;
-      display: inline-block;
-    }
-
-    .result p {
-      margin: 0;
-      font-weight: bold;
-    }
-
-    .correct-answer {
-      color: #155724;
-      font-weight: bold;
-    }
-
-    button {
-    color: #252525;
-    background-color: transparent;
-    border: solid #FF4E58;
-    padding: 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    }
-
-    input[type="submit"] {
-        color: #252525;
-        background-color: transparent;
-        border: solid #FF4E58;
-        padding: 10px;
-        border-radius: 20px;
-        cursor: pointer;
-    }
-  </style>
-
-<h1>Challenges Quiz</h1>
-<div class="quiz-container">
-<% @questions.each_with_index do |question, question_index| %>
-  <%= form_tag({ controller: 'challenges', action: 'show' }, method: "get") do %>
-    <div class="question">
-      <p><strong><%= question[:question] %></strong></p>
-    </div>
-
-    <div class="options">
-      <ul>
-        <% question[:options].each_with_index do |option, index| %>
-          <li>
-            <%= radio_button_tag("answer[#{question_index}]", index) %>
-            <%= label_tag("answer_#{question_index}_#{index}", option) %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-
-    <%= submit_tag("Submit Answer") %>
-  <% end %>
-
-  <% if defined?(@user_answer_indices) && @user_answer_indices[question_index] %>
-    <div class="result">
-      <% if @correct[question_index] %>
-        <p>Your answer is correct!</p>
-      <% else %>
-        <p>Sorry, your answer is incorrect. The correct answer is: <%= question[:options][@correct_answer_indices[question_index]] %></p>
-      <% end %>
+<%= form_for @challenge, url: check_answer_challenge_path(@challenge), method: :post do |f| %>
+  <% @challenge.metadata['questions'].each_with_index do |question, index| %>
+    <div class="question-container" data-index="<%= index %>">
+      <h1><%= question['question'] %></h1>
+      <p><%= f.check_box :selected_options, { multiple: true }, 'a', nil %> <%= f.label :selected_options, question['option_a'] %></p>
+      <p><%= f.check_box :selected_options, { multiple: true }, 'b', nil %> <%= f.label :selected_options, question['option_b'] %></p>
+      <p><%= f.check_box :selected_options, { multiple: true }, 'c', nil %> <%= f.label :selected_options, question['option_c'] %></p>
     </div>
   <% end %>
+
+  <%= hidden_field_tag 'question_count', @challenge.metadata['questions'].length %>
+
+  <%= f.submit "Submit Answers" %>
 <% end %>
-<div>
