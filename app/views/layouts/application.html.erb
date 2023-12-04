@@ -18,34 +18,35 @@
   <body>
     <%= render "shared/flashes" %>
     <header>
-        <div class="group">
+      <div class="group">
         <a href="/" class="logo">Nakamap</a>
-          <ul class="navigation">
-            <li><a href="<%= map_index_path %>">Explore</a></li>
+        <ul class="navigation">
+          <li><a href="<%= map_index_path %>">Explore</a></li>
           <li><a href="<%= challenges_path %>">Challenges</a></li>
-            <li><a href="#">About us</a></li>
-          </ul>
-          <ul class="action">
-            <li><a href="#">
-                <ion-icon name="language-outline"></ion-icon>
-              </a></li>
+          <li><a href="#">About us</a></li>
+        </ul>
+        <ul class="action">
+          <li><a href="#"><ion-icon name="language-outline"></ion-icon></a></li>
 
-              <% if user_signed_in? %>
-                <li>
-                  <%= link_to destroy_user_session_path, data: {turbo_method: :delete} do %>
-                    <ion-icon name="log-out-outline"></ion-icon>
-                  <% end %>
-                </li>
-              <% else %>
-                <li>
-                  <%= link_to new_user_session_path do %>
-                    <ion-icon name="log-in-outline"></ion-icon>
+          <% if user_signed_in? %>
+            <li>
+              <%= link_to destroy_user_session_path, data: {turbo_method: :delete} do %>
+                <ion-icon name="log-out-outline"></ion-icon>
               <% end %>
-      </li>
-    <% end %>
-          </ul>
-        </div>
-      </header>
+            </li>
+            <li>
+              <%= link_to 'Profile', dashboard_path(current_user) %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to new_user_session_path do %>
+                <ion-icon name="log-in-outline"></ion-icon>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </header>
     <%= yield %>
-  </body>
-</html>
+    </body>
+    </html>

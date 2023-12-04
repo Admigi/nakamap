@@ -40,7 +40,7 @@ class ChallengesController < ApplicationController
 
     current_user.update(points: current_user.points + total_points)
 
-    redirect_to @challenge
+    redirect_to challenges_path
   end
 
   private
