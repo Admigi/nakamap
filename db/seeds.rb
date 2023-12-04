@@ -18,6 +18,46 @@ Post.destroy_all
 
 
 puts "Create regions ..."
+anime_questions = [
+  {
+    question: "Who is the main character in 'Naruto'?",
+    option_a: "Sasuke Uchiha",
+    option_b: "Sakura Haruno",
+    option_c: "Naruto Uzumaki",
+    correct_option: "c"
+  },
+  {
+    question: "In 'One Piece,' what is the name of Monkey D. Luffy's straw hat?",
+    option_a: "Red Hat",
+    option_b: "Gum-Gum Hat",
+    option_c: "Sunny Hat",
+    correct_option: "b"
+  },
+  {
+    question: "Which anime features a character named 'Goku'?",
+    option_a: "Naruto",
+    option_b: "Dragon Ball Z",
+    option_c: "Attack on Titan",
+    correct_option: "b"
+  },
+  {
+    question: "In 'My Hero Academia,' what is the protagonist Izuku Midoriya's superhero name?",
+    option_a: "Deku",
+    option_b: "Kacchan",
+    option_c: "All Might",
+    correct_option: "a"
+  },
+  {
+    question: "Who is the creator of 'Attack on Titan'?",
+    option_a: "Eiichiro Oda",
+    option_b: "Hajime Isayama",
+    option_c: "Masashi Kishimoto",
+    correct_option: "b"
+  }
+]
+
+
+anime_challenge = Challenge.create(metadata: { questions: anime_questions })
 
 hokkaido = Region.create(name: "Hokkaido", description: "Hokkaido is the northernmost of Japan’s main islands, known for its volcanoes, natural hot springs (onsen) and ski areas. Rugged Daisetsuzan National Park is home to steaming, volcanic Mount Asahi. Shikotsu-Tōya National Park contains caldera lakes, geothermal springs and a Mount Fuji look-alike, Mount Yōtei. Popular ski resorts include Rusutsu, Furano and Niseko.")
 tohoku = Region.create(name: "Tohoku", description: "Tohoku is a region of Japan’s Honshu Island, home to scenic lakes, forests, mountains and temples. In the remote Dewa Sanzan mountains, the Three Sacred Mountains of Dewa are pilgrimage sites with ancient Shinto shrines. The city of Sendai is known for its castle and the Osaki Hachimangu Shinto shrine. The town of Yamagata is home to the Yamadera temple complex, with its hilltop pagoda.")
