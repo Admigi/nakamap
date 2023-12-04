@@ -1,17 +1,24 @@
-
 <%= form_for @challenge, url: check_answer_challenge_path(@challenge), method: :post, data: { controller: 'timer', timer_time_limit: 300 } do |f| %>
-<div data-timer-target="timer" data-time-limit="<%= 2 * 60 %>"></div>
+  <div class="challenge-form">
+    <div data-timer-target="timer" data-time-limit="<%= 2 * 60 %>"></div>
 
-  <% @challenge.metadata['questions'].each_with_index do |question, index| %>
-    <div class="question-container" data-index="<%= index %>">
-      <h1><%= question['question'] %></h1>
-      <p><%= f.check_box :selected_options, { multiple: true }, 'a', nil %> <%= f.label :selected_options, question['option_a'] %></p>
-      <p><%= f.check_box :selected_options, { multiple: true }, 'b', nil %> <%= f.label :selected_options, question['option_b'] %></p>
-      <p><%= f.check_box :selected_options, { multiple: true }, 'c', nil %> <%= f.label :selected_options, question['option_c'] %></p>
+    <% @challenge.metadata['questions'].each_with_index do |question, index| %>
+    <div class="question-card" data-index="<%= index %>">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= question['question'] %></h5>
+          <div class="options">
+            <label><%= f.check_box :selected_options, { multiple: true }, 'a', nil %> <%= question['option_a'] %></label><br>
+            <label><%= f.check_box :selected_options, { multiple: true }, 'b', nil %> <%= question['option_b'] %></label><br>
+            <label><%= f.check_box :selected_options, { multiple: true }, 'c', nil %> <%= question['option_c'] %></label><br>
+          </div>
+        </div>
+      </div>
     </div>
   <% end %>
 
-  <%= hidden_field_tag 'question_count', @challenge.metadata['questions'].length %>
+    <%= hidden_field_tag 'question_count', @challenge.metadata['questions'].length %>
 
-  <%= f.submit "Submit Answers" %>
+    <%= f.submit "Submit Answers", class: 'submit-button' %>
+  </div>
 <% end %>
