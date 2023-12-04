@@ -5,12 +5,41 @@ class PinsController < ApplicationController
   def index
     @pins = Pin.all
     @categories = Categorie.all
+    @regions = Region.all
 
-    @selected_category = params[:categorie_id] ? Categorie.find(params[:categorie_id]) : nil
+    # @selected_category = params[:categorie_id] ? Categorie.find(params[:categorie_id]) : nil
 
     # Récupère les épingles en fonction de la catégorie sélectionnée ou récupère aucune épingle
-    @pins = @selected_category ? @selected_category.pins : []
+    # @pins = @selected_category ? @selected_category.pins : []
 
+    # if params[:region_id].present?
+    #   @selected_region = Region.find(params[:region_id])
+    #   @pins = @selected_region.pins
+    # elsif params[:categorie_id].present?
+    #   # Utilise la sélection par catégorie seulement si aucune région n'est spécifiée
+    #   @selected_category = params[:categorie_id] ? Categorie.find(params[:categorie_id]) : nil
+    #   @pins = @selected_category ? @selected_category.pins : []
+    # end
+
+    # if params[:region_id].present?
+    #   @selected_region = Region.find(params[:region_id])
+    #   @pins = @selected_region.pins
+    # elsif params[:categorie_id].present?
+    #   # Utilise la sélection par catégorie seulement si aucune région n'est spécifiée
+    #   @selected_category = Categorie.find(params[:categorie_id])
+    #   @pins = @selected_category.pins
+    # end
+    if params[:region_id].present?
+      @selected_region = Region.find(params[:region_id])
+      @pins = @selected_region.pins
+    end
+
+    if params[:categorie_id].present?
+      @selected_category = Categorie.find(params[:categorie_id])
+      @pins = @pins.present? ? @pins.where(categorie: @selected_category) : @selected_category.pins
+    end
+
+    
     @markers = @pins.present? ? @pins.geocoded.map do |pin|
       {
         lat: pin.latitude,
