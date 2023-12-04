@@ -1,4 +1,7 @@
-<%= form_for @challenge, url: check_answer_challenge_path(@challenge), method: :post do |f| %>
+
+<%= form_for @challenge, url: check_answer_challenge_path(@challenge), method: :post, data: { controller: 'timer', timer_time_limit: 300 } do |f| %>
+<div data-timer-target="timer" data-time-limit="<%= 2 * 60 %>"></div>
+
   <% @challenge.metadata['questions'].each_with_index do |question, index| %>
     <div class="question-container" data-index="<%= index %>">
       <h1><%= question['question'] %></h1>

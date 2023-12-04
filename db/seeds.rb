@@ -56,7 +56,6 @@ anime_questions = [
   }
 ]
 
-
 anime_challenge = Challenge.create(metadata: { questions: anime_questions })
 
 hokkaido = Region.create(name: "Hokkaido", description: "Hokkaido is the northernmost of Japan’s main islands, known for its volcanoes, natural hot springs (onsen) and ski areas. Rugged Daisetsuzan National Park is home to steaming, volcanic Mount Asahi. Shikotsu-Tōya National Park contains caldera lakes, geothermal springs and a Mount Fuji look-alike, Mount Yōtei. Popular ski resorts include Rusutsu, Furano and Niseko.")
