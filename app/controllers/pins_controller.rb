@@ -21,7 +21,6 @@ class PinsController < ApplicationController
     elsif params[:categorie_id].present?
       @selected_category = Categorie.find(params[:categorie_id])
       @pins = @pins.present? ? @pins.where(categorie: @selected_category) : @selected_category.pins
-
     end
 
 
