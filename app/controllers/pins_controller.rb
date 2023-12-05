@@ -3,7 +3,7 @@ class PinsController < ApplicationController
   # before_action :authenticate_user
 
   def index
-    @pins = Pin.all
+    @pins = []
     @categories = Categorie.all
     @regions = Region.all
 
