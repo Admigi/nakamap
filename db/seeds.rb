@@ -17,6 +17,8 @@ Categorie.destroy_all
 Post.destroy_all
 Challenge.destroy_all
 
+puts "Create challenges ..."
+
 jpop_questions = [
   {
     question: "Which J-Pop group is known for the hit song 'Pretender'?",
@@ -216,6 +218,8 @@ anime_questions = [
 ]
 
 anime_challenge = Challenge.create!(name: "Anime Quizz", metadata: { questions: anime_questions })
+
+puts "Create regions ..."
 
 hokkaido = Region.create(name: "Hokkaido", description: "Hokkaido is the northernmost of Japan’s main islands, known for its volcanoes, natural hot springs (onsen) and ski areas. Rugged Daisetsuzan National Park is home to steaming, volcanic Mount Asahi. Shikotsu-Tōya National Park contains caldera lakes, geothermal springs and a Mount Fuji look-alike, Mount Yōtei. Popular ski resorts include Rusutsu, Furano and Niseko.")
 tohoku = Region.create(name: "Tohoku", description: "Tohoku is a region of Japan’s Honshu Island, home to scenic lakes, forests, mountains and temples. In the remote Dewa Sanzan mountains, the Three Sacred Mountains of Dewa are pilgrimage sites with ancient Shinto shrines. The city of Sendai is known for its castle and the Osaki Hachimangu Shinto shrine. The town of Yamagata is home to the Yamadera temple complex, with its hilltop pagoda.")
