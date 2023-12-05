@@ -15,6 +15,7 @@
     }
   
     img {
+      object-fit: cover;
       width: 100px;
       height: 100px;
       border-radius: 8px;
@@ -118,12 +119,126 @@
   }
   
   .bio-container {
-    h1 {
+    span {
       color: #252525;
-      font-size: 30px;
+      font-size: 20px;
       font-family: Urbanist;
       font-weight: 500;
       margin-bottom: 10px;
     }
   }
   
+  .achievements-title {
+    font-weight: 700;
+    font-size: 40px;
+    color: #252525;
+  }
+
+  .profile-picture {
+    background-size: cover;
+    width: 295.95px;
+    height: 295.95px;
+    border-radius: 300px;
+    border: 5px #252525 solid;
+  }
+
+  .status-button {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    fill: #A1FF89;
+    stroke-width: 2px;
+    stroke: #252525;
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    border-radius: 300px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    &.online {
+      background-color: #A1FF89;
+    }
+  
+    &.idle {
+      background-color: #d78826;
+    }
+  
+    &.donotdisturb {
+      background-color: #e74c3c;
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .user-profile {
+    position: relative;
+    display: inline-block;
+  }
+
+  .menu-profile {
+    padding: 44px;
+    width: 100%;
+    height: 80px;
+    background: #252525;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 72px;
+    display: inline-flex;
+  
+    p {
+      margin: 0;
+      color: white;
+      font-size: 24px;
+      font-family: Urbanist;
+      font-weight: 500;
+      word-wrap: break-word;
+    }
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  
+    .full-width-div {
+      width: 100%;
+      height: 105px;
+      background: #562D2D;
+      border-radius: 15px;
+      border: 5px #921313 solid;
+      padding: 20px;
+      box-sizing: border-box;
+      p {
+        color: white;
+        font-size: 24px;
+        font-family: Urbanist;
+        font-weight: 500;
+        word-wrap: break-word;
+      }
+    }
+  
+    .two-divs-row {
+      display: flex;
+      gap: 20px;
+  
+      .half-width-div {
+        flex: 1;
+        background-color: lightcoral;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin: 50px;
+  }

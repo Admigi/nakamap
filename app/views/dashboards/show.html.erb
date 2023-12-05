@@ -1,10 +1,41 @@
-<h1>Welcome, <%= @user.username %></h1>
+
+<div class="menu-profile">
+  <p>Profile</p>
+  <p>Achievements</p>
+  <p>Trips</p>
+  <p>Help Center</p>
+  <p>Community Hub</p>
+</div>
+
+<div class="wrapper">
 
 <div class="card-profile">
   <div class="user-info">
+    <% if @user.image_url.attached? %>
+      <%= image_tag @user.image_url, class:"profile-picture" %>
+    <% else %>
+      <%= image_tag 'default.jpg', class:"profile-picture" %>
+    <% end %>
+    <div data-controller="user-status">
+      <button data-target="user-status.button" data-action="click->user-status#toggleDisplay" class="status-button online"></button>
+
+      <div data-target="user-status.display" data-action="change->user-status#updateStatus" class="hidden">
+        <p>What's your current status?</p>
+        <label>
+          <input type="radio" name="status" value="online"> Online
+        </label>
+        <label>
+          <input type="radio" name="status" value="idle"> Idle
+        </label>
+        <label>
+          <input type="radio" name="status" value="donotdisturb"> Do not disturb
+        </label>
+      </div>
+    </div>
+
     <h1 class="card-name"><%= @user.username %></h1>
     <div class="bio-container">
-      <span class="user-bio"><%= @user %></span>
+      <span class="user-bio"><%= @user.bio %></span>
     </div>
     <div class="button-container">
       <%= button_to 'Edit profile', edit_dashboards_path, method: :get, class: 'custom-button' %>
@@ -13,11 +44,11 @@
   </div>
 
   <div class="achievements-container">
-    <h2>Achievements:</h2>
+    <h2 class="achievements-title">Achievements:</h2>
     <ul class="badge-list">
       <% @user.badges.each do |badge| %>
         <li class="badge-container">
-          <%= image_tag badge.image if badge.image.attached? %>
+          <%= image_tag badge.image, style: "border-radius: 50%; border: 5px solid #252525;" if badge.image.attached? %>
           <div class="badge-details">
             <h3>
               <strong><%= badge.name %></strong>
@@ -37,4 +68,20 @@
       <% end %>
     </ul>
   </div>
+</div>
+<div class="container">
+  <div class="full-width-div">
+    <p>You unlocked new Achievements with private contributions! Show them off by including private contributions in your Profile in <strong>settings</strong>.</p>
+  </div>
+
+  <div class="two-divs-row">
+    <div class="half-width-div">
+      Half Width Div 1
+    </div>
+
+    <div class="half-width-div">
+      Half Width Div 2
+    </div>
+  </div>
+</div>
 </div>
