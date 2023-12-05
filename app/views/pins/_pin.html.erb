@@ -1,1 +1,12 @@
-<%= image_tag "marker.png", class: "custom-pin" %>
+<% case @pins.first.categorie.name %>
+  <% when "Nature" %>
+    <%= image_tag "bonsai.png", class: "custom-pin" %>
+  <% when "Pop-Culture" %>
+    <%= image_tag "ninja.png", class: "custom-pin" %>
+  <% when "Food" %>
+    <%= image_tag "ramen.png", class: "custom-pin" %>
+  <% when "Tradition" %>
+    <%= image_tag "porte-torii.png", class: "custom-pin" %>
+  <% when "Craftmanship" %>
+    <%= image_tag "calmar.png", class: "custom-pin" %>
+<% end %>
