@@ -14,7 +14,7 @@ class ChallengesController < ApplicationController
     correct_answers = 0
     points_for_correct_answer = 10  # Adjust points
     points_for_time_taken = 5
-
+    
     selected_options = params[:challenge][:selected_options]
 
     unless selected_options.nil?
@@ -39,7 +39,6 @@ class ChallengesController < ApplicationController
     flash[:notice] += " Total points: #{total_points}"
 
     current_user.update(points: current_user.points + total_points)
-
     redirect_to challenges_path
   end
 
