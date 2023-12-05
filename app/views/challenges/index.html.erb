@@ -2,6 +2,13 @@
   <h1 class="subtitle">Challenges Index</h1>
 </div>
 
+<div class="challenge-bar">
+  <%= form_tag(search_challenges_path, method: :get) do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search..." %>
+    <%= submit_tag "", class: "search-icon fas fa-search" %>
+  <% end %>
+</div>
+
 <ul class="challenge-list">
   <% @challenges.each do |challenge| %>
     <li>

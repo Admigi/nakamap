@@ -150,3 +150,36 @@
     color: #333;
     margin-bottom: 20px;
   }
+
+  .challenge-bar {
+    border-radius: 30px;
+    margin-left: 100px;
+    display: flex;
+    align-items: center;
+  
+    input[type="text"] {
+      padding: 8px;
+      font-size: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-right: 8px;
+      flex-grow: 1;
+      border: none;
+      outline: none;
+    }
+  
+    button {
+      padding: 8px 12px;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  
+    .search-icon {
+      font-size: 20px;
+      margin-right: 8px;
+    }
+  }
+  

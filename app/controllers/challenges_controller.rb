@@ -7,6 +7,11 @@ class ChallengesController < ApplicationController
     @challenge = Challenge.find(params[:id])
   end
 
+  def search
+    @challenges = Challenge.where("name ILIKE ?", "%#{params[:search].gsub(/\s+/, '%')}%")
+    render :index
+  end
+
   def check_answer
     @challenge = Challenge.find(params[:id])
     questions = @challenge.metadata['questions']
