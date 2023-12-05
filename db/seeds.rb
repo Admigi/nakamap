@@ -15,7 +15,167 @@ Pin.destroy_all
 Region.destroy_all
 Categorie.destroy_all
 Post.destroy_all
+Challenge.destroy_all
 
+jpop_questions = [
+  {
+    question: "Which J-Pop group is known for the hit song 'Pretender'?",
+    option_a: "Arashi",
+    option_b: "King & Prince",
+    option_c: "Official HIGE DANDism",
+    correct_option: "c"
+  },
+  {
+    question: "Who is often referred to as the 'Queen of J-Pop'?",
+    option_a: "Namie Amuro",
+    option_b: "Utada Hikaru",
+    option_c: "Ayumi Hamasaki",
+    correct_option: "a"
+  },
+  {
+    question: "Which J-Pop artist collaborated with Pharrell Williams on the song 'Happy'?",
+    option_a: "Kyary Pamyu Pamyu",
+    option_b: "Perfume",
+    option_c: "Nishino Kana",
+    correct_option: "b"
+  },
+  {
+    question: "In which year did the Japanese idol group AKB48 debut?",
+    option_a: "2005",
+    option_b: "2007",
+    option_c: "2009",
+    correct_option: "a"
+  },
+  {
+    question: "What is the meaning of 'J-Pop'?",
+    option_a: "Japanese Pop",
+    option_b: "Joyful Pop",
+    option_c: "Jubilant Pop",
+    correct_option: "a"
+  }
+]
+
+jpop_challenge = Challenge.create!(name: "J-Pop Music Quiz", metadata: { questions: jpop_questions })
+
+landmark_questions = [
+  {
+    question: "Which iconic Japanese mountain is considered a sacred symbol?",
+    option_a: "Mount Fuji",
+    option_b: "Mount Aso",
+    option_c: "Mount Hakone",
+    correct_option: "a"
+  },
+  {
+    question: "What is the famous floating torii gate located in the water at Miyajima called?",
+    option_a: "Itsukushima Shrine",
+    option_b: "Fushimi Inari Shrine",
+    option_c: "Meiji Shrine",
+    correct_option: "a"
+  },
+  {
+    question: "Which historical city is known for its well-preserved samurai residences?",
+    option_a: "Kanazawa",
+    option_b: "Nara",
+    option_c: "Matsumoto",
+    correct_option: "a"
+  },
+  {
+    question: "What is the ancient capital of Japan with a large number of historic temples and shrines?",
+    option_a: "Kyoto",
+    option_b: "Osaka",
+    option_c: "Tokyo",
+    correct_option: "a"
+  },
+  {
+    question: "Which Japanese castle is often called 'Crow Castle' due to its black exterior?",
+    option_a: "Himeji Castle",
+    option_b: "Matsumoto Castle",
+    option_c: "Osaka Castle",
+    correct_option: "b"
+  }
+]
+
+landmark_challenge = Challenge.create!(name: "Japanese Landmarks Quiz", metadata: { questions: landmark_questions })
+
+culture_questions = [
+  {
+    question: "What is the traditional Japanese tea ceremony known as?",
+    option_a: "Sado",
+    option_b: "Kendo",
+    option_c: "Ikebana",
+    correct_option: "a"
+  },
+  {
+    question: "Which Japanese city is famous for its historic geisha district?",
+    option_a: "Tokyo",
+    option_b: "Kyoto",
+    option_c: "Osaka",
+    correct_option: "b"
+  },
+  {
+    question: "What is the name of the Japanese New Year's celebration?",
+    option_a: "Hinamatsuri",
+    option_b: "Tanabata",
+    option_c: "Oshogatsu",
+    correct_option: "c"
+  },
+  {
+    question: "Which traditional Japanese theater form combines drama, music, and dance?",
+    option_a: "Noh",
+    option_b: "Kabuki",
+    option_c: "Bunraku",
+    correct_option: "b"
+  },
+  {
+    question: "What is the Japanese art of paper folding called?",
+    option_a: "Origami",
+    option_b: "Sumi-e",
+    option_c: "Ukiyo-e",
+    correct_option: "a"
+  }
+]
+
+culture_challenge = Challenge.create!(name: "Japanese Culture Quiz", metadata: { questions: culture_questions })
+
+food_questions = [
+  {
+    question: "Which Japanese dish consists of thinly sliced raw fish?",
+    option_a: "Ramen",
+    option_b: "Sushi",
+    option_c: "Tempura",
+    correct_option: "b"
+  },
+  {
+    question: "What is the main ingredient in miso soup?",
+    option_a: "Seaweed",
+    option_b: "Tofu",
+    option_c: "Miso paste",
+    correct_option: "c"
+  },
+  {
+    question: "Which Japanese noodles are often served in a hot broth with toppings?",
+    option_a: "Udon",
+    option_b: "Soba",
+    option_c: "Ramen",
+    correct_option: "c"
+  },
+  {
+    question: "What is the traditional Japanese rice wine?",
+    option_a: "Sake",
+    option_b: "Soju",
+    option_c: "Shochu",
+    correct_option: "a"
+  },
+  {
+    question: "Which Japanese sweet treat is made from glutinous rice?",
+    option_a: "Mochi",
+    option_b: "Dorayaki",
+    option_c: "Taiyaki",
+    correct_option: "a"
+  }
+]
+
+food_challenge = Challenge.create!(name: "Japanese Food Quiz", metadata: { questions: food_questions })
 
 anime_questions = [
   {
@@ -55,7 +215,7 @@ anime_questions = [
   }
 ]
 
-anime_challenge = Challenge.create(name: "Anime Quizz", metadata: { questions: anime_questions })
+anime_challenge = Challenge.create!(name: "Anime Quizz", metadata: { questions: anime_questions })
 
 hokkaido = Region.create(name: "Hokkaido", description: "Hokkaido is the northernmost of Japan’s main islands, known for its volcanoes, natural hot springs (onsen) and ski areas. Rugged Daisetsuzan National Park is home to steaming, volcanic Mount Asahi. Shikotsu-Tōya National Park contains caldera lakes, geothermal springs and a Mount Fuji look-alike, Mount Yōtei. Popular ski resorts include Rusutsu, Furano and Niseko.")
 tohoku = Region.create(name: "Tohoku", description: "Tohoku is a region of Japan’s Honshu Island, home to scenic lakes, forests, mountains and temples. In the remote Dewa Sanzan mountains, the Three Sacred Mountains of Dewa are pilgrimage sites with ancient Shinto shrines. The city of Sendai is known for its castle and the Osaki Hachimangu Shinto shrine. The town of Yamagata is home to the Yamadera temple complex, with its hilltop pagoda.")
