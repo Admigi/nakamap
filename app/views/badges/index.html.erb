@@ -1,27 +1,49 @@
-<h1>Badges</h1>
+<div class="menu-profile">
+  <%= link_to "Profile", dashboards_path %>
+  <%= link_to "Achievements", badges_path %>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="wrapper">
 
-  <tbody>
-    <% @badges.each do |badge| %>
-      <tr>
-        <td><%= badge.name %></td>
-        <td><%= badge.description %></td>
-        <td><%= image_tag badge.image if badge.image.attached? %></td>
-        <td><%= link_to 'Show', badge %></td>
-        <td><%= link_to 'Edit', edit_badge_path(badge) %></td>
-        <td><%= link_to 'Destroy', badge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+  <div class="card-profile">
+    <div class="user-info">
+      <% if @current_user.image_url.attached? %>
+        <%= image_tag @current_user.image_url, class:"profile-picture" %>
+      <% else %>
+        <%= image_tag 'default.jpg', class:"profile-picture" %>
+      <% end %>
+      <div data-controller="user-status">
+        <button data-target="user-status.button" data-action="click->user-status#toggleDisplay" class="status-button online"></button>
+
+        <div data-target="user-status.display" data-action="change->user-status#updateStatus" class="hidden">
+          <p>What's your current status?</p>
+          <label>
+            <input type="radio" name="status" value="online"> Online
+          </label>
+          <label>
+            <input type="radio" name="status" value="idle"> Idle
+          </label>
+          <label>
+            <input type="radio" name="status" value="donotdisturb"> Do not disturb
+          </label>
+        </div>
+      </div>
+
+      <h1 class="card-name"><%= @current_user.username %></h1>
+      <div class="bio-container">
+        <span class="user-bio"><%= @current_user.bio %></span>
+      </div>
+      <div class="button-container">
+        <%= button_to 'Edit profile', edit_dashboards_path, method: :get, class: 'custom-button' %>
+      </div>
+      <hr>
+    </div>
+  </div>
+  <div class="badges-container">
+    <% @current_user.badges.each do |badge| %>
+      <div class="badge">
+        <%= image_tag badge.image, style: "width: 200px; height: 200px; object-fit: cover; border-radius: 8px;" if badge.image.attached? %>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<%= link_to 'New Badge', new_badge_path %>
+  </div>
+</div>

@@ -14,11 +14,12 @@ export default class extends Controller {
 
       if (this.secondsRemaining <= 0) {
         clearInterval(this.timerInterval);
-        // auto-submit the form when timer 0
+        // auto-submit the form when timer reaches 0
         this.element.submit();
       }
 
       this.updateTimerDisplay();
+      this.handleVisualEffects();
     }, 1000);
   }
 
@@ -26,5 +27,14 @@ export default class extends Controller {
     const minutes = Math.floor(this.secondsRemaining / 60);
     const seconds = this.secondsRemaining % 60;
     this.timerTarget.textContent = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+  }
+
+  handleVisualEffects() {
+    // Adjust the threshold based on when you want the visual effects to start
+    const visualEffectThreshold = 10;
+
+    if (this.secondsRemaining <= visualEffectThreshold) {
+      this.timerTarget.classList.add("timer-expiring");
+    }
   }
 }
