@@ -8,29 +8,20 @@ class PinsController < ApplicationController
     @regions = Region.all
 
 
-    if params[:region_id].present?
-      @selected_region = Region.find(params[:region_id])
-      @pins = @selected_region.pins
-    end
-
-    if params[:categorie_id].present?
-      @selected_category = Categorie.find(params[:categorie_id])
-      @pins = @pins.present? ? @pins.where(categorie: @selected_category) : @selected_category.pins
-    end
-
-
-    if params[:region_id].present? && params[:categorie_id].present?
-      @selected_category = Categorie.find(params[:categorie_id])
-      @selected_region = Region.find(params[:region_id])
-      @pins = @pins.present? ? @pins.where(categorie: @selected_category) : @selected_category.pins
-      @pins = @pins.present? ? @pins.where(region: @selected_region) : @selected_region.pins
-    end
-
     if params[:categorie_id].present? && params[:region_id].present?
       @selected_region = Region.find(params[:region_id])
       @selected_category = Categorie.find(params[:categorie_id])
       @pins = @pins.present? ? @pins.where(region: @selected_region) : @selected_region.pins
       @pins = @pins.present? ? @pins.where(categorie: @selected_category) : @selected_category.pins
+
+    elsif params[:region_id].present?
+      @selected_region = Region.find(params[:region_id])
+      @pins = @selected_region.pins
+
+    elsif params[:categorie_id].present?
+      @selected_category = Categorie.find(params[:categorie_id])
+      @pins = @pins.present? ? @pins.where(categorie: @selected_category) : @selected_category.pins
+
     end
 
 
