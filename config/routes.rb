@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+  resources :bookmarks, only: [:create]
   resource :dashboards, only: [:show, :edit, :update]
   resources :pins, only: %i[index show], as: "map"
   resources :posts
