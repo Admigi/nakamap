@@ -17,6 +17,25 @@
           <h3 class="challenge-title"><%= challenge.name %></h3>
         </div>
       <% end %>
+
+      <%= button_to "Bookmark", bookmarks_path(challenge_id: challenge.id), method: :post, remote: true %>
     </li>
   <% end %>
 </ul>
+
+<hr>
+<div class="index-title">
+  <h1 class="subtitle">Newest Challenges</h1>
+</div>
+<% if @challenges.present? %>
+  <% latest_challenge = @challenges.last %>
+  <ul class="challenge-list">
+    <li>
+      <%= link_to challenge_path(latest_challenge) do %>
+        <div class="challenge-card">
+          <h3 class="challenge-title"><%= latest_challenge.name %></h3>
+        </div>
+      <% end %>
+    </li>
+  </ul>
+<% end %>

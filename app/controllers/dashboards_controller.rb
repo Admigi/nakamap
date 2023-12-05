@@ -4,6 +4,7 @@ class DashboardsController < ApplicationController
 
   def show
     @user = current_user
+    @top_users = User.top_users(10)
   end
 
   def edit
