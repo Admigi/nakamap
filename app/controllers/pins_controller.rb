@@ -28,7 +28,7 @@ class PinsController < ApplicationController
       {
         lat: pin.latitude,
         lng: pin.longitude,
-        marker_html: render_to_string(partial: "pin"),
+        marker_html: render_to_string(partial: "pin", locals: { pin: pin }),
         info_window_html: render_to_string(partial: "info_window", locals: { pin: pin })
       }
     end : []
