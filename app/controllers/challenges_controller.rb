@@ -39,7 +39,7 @@ class ChallengesController < ApplicationController
 
     total_points = points_for_correct_answers + points_for_time_taken
 
-    flash[:notice] = "You answered #{correct_answers} out of #{total_questions} questions correctly."
+    flash[:notice] = "You earn a new badge. You answered #{correct_answers} out of #{total_questions} questions correctly."
     flash[:notice] += " You earned #{points_for_correct_answers} points for correct answers and #{points_for_time_taken} points for time taken."
     flash[:notice] += " Total points: #{total_points}"
 
