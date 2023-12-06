@@ -1,3 +1,12 @@
+.wrapper-dhs {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+  flex-direction: column;
+  height: 100vh;
+  flex-wrap: wrap;
+}
 .badge-list {
     display: flex;
     list-style: none;

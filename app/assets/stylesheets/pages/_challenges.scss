@@ -204,3 +204,29 @@
       color: #3498db;
     }
   }
+
+  .bookmark-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transition: background-color 0.3s ease;
+  }
+  
+  .bookmark-btn ion-icon {
+    font-size: 20px;
+    margin-right: 5px;
+  }
+  
+  .bookmark-btn:hover {
+    background-color: #45a049;
+  }

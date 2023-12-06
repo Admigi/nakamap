@@ -1,14 +1,16 @@
 .wrapper {
     display: flex;
     justify-content: center;
-    max-width: 1600px;
+    width: 100%;
     margin: 0 auto;
     overflow-x: hidden;
+    flex-direction: column;
+    height: 100vh;
   }
 
   .map-container {
-    width: 1600px;
-    height: 750px;
+    width: 1300px;
+    height: 600px;
     flex-shrink: 0;
     border: 17px #7A5C58 solid;
     border-radius: 45px;
@@ -23,8 +25,8 @@
     position: absolute;
     top: -20px;
     left: -100px;
-    width: 350px;
-    height: 450px;
+    width: 100px;
+    height: 60px;
     // background: url("/assets/images/mascott.png") no-repeat center center;
     background-size: cover;
     border-radius: 50%;
@@ -190,12 +192,20 @@
 
 
 .category-filters {
-  color: blue;
-  position: absolute;
-  width: 250px;
+  background-color: white;
+  color: #252525;
+  /* position: absolute; */
+  /* width: 250px; */
   height: 120px;
   z-index: 1;
-  border : 1px solid black;
-  right: 0px;
-  bottom: -10px;
+  box-shadow: 0px 4px 4.5px 0px rgba(0, 0, 0, 0.41);
+  border: 2px solid black;
+  /* right: 0px; */
+  /* bottom: -10px; */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
+
