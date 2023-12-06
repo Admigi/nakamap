@@ -182,4 +182,25 @@
       margin-right: 8px;
     }
   }
+
+  .timer {
+    font-size: 18px;
+    font-weight: bold;
+  }
   
+  .countdown {
+    color: #3498db;
+  }
+  
+  .timer-expiring {
+    animation: pulse 0.5s infinite alternate;
+  }
+  
+  @keyframes pulse {
+    from {
+      color: #e74c3c;
+    }
+    to {
+      color: #3498db;
+    }
+  }

@@ -2,7 +2,7 @@ class BadgesController < ApplicationController
     before_action :set_badge, only: [:show, :edit, :update, :destroy]
   
     def index
-      @badges = Badge.all
+      @user_badges = current_user.badges
     end
   
     def show
