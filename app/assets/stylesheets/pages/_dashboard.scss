@@ -251,7 +251,7 @@
   .wrapper {
     overflow: visible;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: flex-start;
     gap: 20px;
     margin: 50px;
