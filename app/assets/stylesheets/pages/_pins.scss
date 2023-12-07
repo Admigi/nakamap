@@ -2,6 +2,7 @@
     width: 100%;
     overflow-x: hidden;
     height: calc(90vh - 121px);
+    position: relative;
   }
 
   .map-container {
@@ -14,27 +15,26 @@
     overflow: hidden;
     background: rgba(230, 247, 255, 0.58);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
+    margin: 0 auto;
   }
 
    /* Style for the mascot container */
   .mascot-container {
     position: absolute;
-    top: 120px;
-    left: 120px;
-    width: 100px;
-    height: 60px;
+    top: 15px;
+    left: 55px;
     // background: url("/assets/images/mascott.png") no-repeat center center;
     background-size: cover;
     border-radius: 50%;
     z-index: 1;
+
   }
 
   /* Style for the speech bubble */
   .speech-bubble {
     position: absolute;
-    top: 150px;
-    left: 360px;
+    top: 50px;
+    left: 270px;
     width: 240px;
     height: auto;
     background: #7A5C58;
