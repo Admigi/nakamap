@@ -2,22 +2,19 @@
   text-align: center;
   color: #7E7E7E;
   font-size: 10px;
-  font-family: Urbanist;
+  font-family: "Urbanist";
   font-weight: 500;
   padding-top: 50px;
-  padding-left: 100px;
   padding-bottom: 5px;
   word-wrap: break-word;
 }
 
 .intro-p {
   color: #7E7E7E;
-  font-size: 25px;
-  font-family: Urbanist;
+  font-size: 23px;
+  font-family: "Urbanist";
   font-weight: 300;
   word-wrap: break-word;
-  padding-left: 100px;
-  padding-bottom: 30px;
 }
 
 .img-article {
@@ -26,22 +23,33 @@
 .subtitle {
   text-align: justify;
   color: #252525;
-  font-size: 25px;
-  font-family: Urbanist;
+  font-size: 35px;
+  font-family: "Urbanist";
   font-weight: 500;
   word-wrap: break-word;
-  padding-left: 100px;
   padding-bottom: 5px;
+}
+
+.subtitle2 {
+  text-align: justify;
+  color: #252525;
+  font-size: 35px;
+  font-family: "Urbanist";
+  font-weight: 500;
+  word-wrap: break-word;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  margin-top: 50px;
 }
 
 .title {
   text-align: center;
   color: #252525;
   font-size: 62px;
-  font-family: Urbanist;
+  font-family: "Urbanist";
   font-weight: 800;
   word-wrap: break-word;
-  padding-top: 60px;
+  padding-top: 10px;
   padding-bottom: 60px;
 }
 
@@ -54,7 +62,7 @@
     width: 605px;
     color: #7E7E7E;
     font-size: 20px;
-    font-family: Urbanist;
+    font-family: "Urbanist";
     font-weight: 300;
     word-wrap: break-word;
     padding-left: 100px;
@@ -77,8 +85,8 @@
     padding-bottom: 15px;
     text-align: left;
     color: white;
-    font-size: 20px;
-    font-family: Urbanist;
+    font-size: 32px;
+    font-family: "Urbanist";
     font-weight: 300;
     word-wrap: break-word;
   }
@@ -87,7 +95,7 @@
     width: 605px;
     color: white;
     font-size: 15px;
-    font-family: Urbanist;
+    font-family: "Urbanist";
     font-weight: 300;
     word-wrap: break-word;
     padding-bottom: 15px;
@@ -98,22 +106,12 @@
     }
   }
   ul {
-    padding-left: 100px;
     color: white;
     padding-top: 12px;
   }
-  .more {
-  padding-left: 100px;
-  margin-top: 5px;
-  color: #A45CFF;
-  font-size: 30px;
-  font-family: Urbanist;
-  font-weight: 500;
-  word-wrap: break-word;
-  padding-bottom: 20px;
-  }
   .subtitle {
     color: white;
+    font-size: 40px;
   }
   .intro-p {
     color: #9BC9FF;
@@ -141,7 +139,7 @@
     margin: 15px;
     color: white;
     font-size: 15px;
-    font-family: Urbanist;
+    font-family: "Urbanist";
     font-weight: 300;
     word-wrap: break-word;
     text-decoration: underline;
@@ -150,4 +148,50 @@
       padding-top: 15px;
     }
   }
+}
+
+.p-flex {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  column-gap: 50px;
+  color: #7E7E7E;
+  font-size: 20px;
+  font-family: "Urbanist";
+  font-weight: 300;
+  margin-bottom: 50px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.daibutsu {
+  height: 200px;
+  object-fit: cover;
+}
+
+.info-container {
+  margin: 0 auto;
+  max-width: 1300px;
+  padding: 30px;
+}
+
+.bottom-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  color: #7E7E7E;
+  font-size: 20px;
+  font-family: "Urbanist";
+  font-weight: 300;
+  margin-bottom: 50px;
+  align-items: center;
+}
+
+.sakura-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }

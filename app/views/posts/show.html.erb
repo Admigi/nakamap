@@ -1,38 +1,31 @@
 <div>
-  <div>
     <h3 class="title"><%= @post.pin.name %></h3>
     <div data-controller="streetview">
-      <div id="panorama" style="width: 100%; height: 600px;"></div>
+      <div id="panorama" style="width: 100%; height: 650px;"></div>
     </div>
-    <span class="timestamp"><%= @post.created_at.strftime("%B %d, %Y") %></span>
-    <h2 class="subtitle">HISTORICAL BACKGROUND</h2>
-    <h1 class="intro-p">Todai-ji, meaning "Great Eastern Temple," was originally constructed in 752 during the Nara period (710-794) by Emperor Shomu. The temple was envisioned as a center for Buddhist learning and played a crucial role in promoting Buddhism as the state religion. The construction of Todai-ji was part of a larger plan to solidify the emperor's control over the country and bring about a sense of unity.</h1>
-      <div class="grid">
-        <div>
-          <h2 class="subtitle">The Great Buddha Hall (Daibutsuden)</h2>
-          <p>At the heart of Todai-ji Temple stands the Daibutsuden, or the Great Buddha Hall, which is one of the largest wooden structures in the world. The hall houses a colossal bronze statue of Buddha known as the Daibutsu, or Great Buddha. Cast in 746, the statue is an awe-inspiring representation of Vairocana, the cosmic Buddha. Standing at over 15 meters in height, the Great Buddha exudes a sense of tranquility and spiritual grace.</p>
-        </div>
-        <div>
-          <p>The construction of the Great Buddha Hall was not without challenges. The original structure was even more massive, but due to various natural disasters and reconstruction efforts, the present-day hall is two-thirds of its original size. Nonetheless, it remains a masterpiece of Japanese architecture, showcasing intricate details and meticulous craftsmanship.</p>
-        </div>
-        <div class="img-article">
-      </div>
-  </div>
+    <div class="info-container">
+      <span class="timestamp"><%= @post.created_at.strftime("%B %d, %Y") %></span>
+      <h2 class="subtitle">HISTORICAL BACKGROUND</h2>
+      <h1 class="intro-p">Todai-ji, meaning "Great Eastern Temple," was originally constructed in 752 during the Nara period (710-794) by Emperor Shomu. The temple was envisioned as a center for Buddhist learning and played a crucial role in promoting Buddhism as the state religion. The construction of Todai-ji was part of a larger plan to solidify the emperor's control over the country and bring about a sense of unity.</h1>
+          <h2 class="subtitle2">The Great Buddha Hall (Daibutsuden)</h2>
+          <div class="p-flex">
+            <p>At the heart of Todai-ji Temple stands the Daibutsuden, or the Great Buddha Hall, which is one of the largest wooden structures in the world. The hall houses a colossal bronze statue of Buddha known as the Daibutsu, or Great Buddha. Cast in 746, the statue is an awe-inspiring representation of Vairocana, the cosmic Buddha. Standing at over 15 meters in height, the Great Buddha exudes a sense of tranquility and spiritual grace.</p>
+            <p>The construction of the Great Buddha Hall was not without challenges. The original structure was even more massive, but due to various natural disasters and reconstruction efforts, the present-day hall is two-thirds of its original size. Nonetheless, it remains a masterpiece of Japanese architecture, showcasing intricate details and meticulous craftsmanship.</p>
+            <%= image_tag("daibutsu.jpg", alt: "Daibutsuden", class:"daibutsu") %>
+          </div>
+    </div>
   <div class="quote" style="background: #383838">
     <h2 class="subtitle">OTHERS POINTS OF INTEREST IN NARA PARK</h2>
           <p class="intro-p">Nara Park, nestled in the heart of Nara, Japan, is a captivating blend of natural beauty, cultural heritage, and spiritual significance.</p>
-          <ul class="article-list">
-            <li>𐑂<strong>Nara Deer Park:</strong> A picturesque park where hundreds of freely roaming deer, considered sacred messengers of the gods, create a unique and charming atmosphere.</li>
-            <li>𐑂<strong>Kofuku-ji Temple:</strong> Another ancient temple in Nara, known for its towering pagoda and historical significance dating back to the 7th century.</li>
-            <li>𐑂<strong>Kasuga Taisha Shrine:</strong> Famous for its beautiful lantern-lined paths, this Shinto shrine is dedicated to the deity responsible for the protection of the city.</li>
-            <li>𐑂<strong>Nara National Museum:</strong> Showcasing a vast collection of Buddhist art and artifacts, the museum provides insights into the cultural and religious history of the region.</li>
-            <li>𐑂<strong>Naramachi:</strong> A preserved merchant district with traditional machiya (wooden townhouses), offering a glimpse into Nara's past.</li>
-            <li>𐑂<strong>Isuien Garden:</strong> A stunning Japanese garden with meticulously designed landscapes, teahouses, and ponds, offering a peaceful retreat.</li>
-            <li>𐑂<strong>Yoshiki-en Garden:</strong> Heat-treating the blade to create the hamon</li>
-            <li>𐑂<strong>Nara Prefectural Government Office:</strong> Final finishing of the blade, including correcting warps and bends caused by yaki ire</li>
-            <li>𐑂<strong>Nara City Museum of Photography:</strong> Carving grooves and engravings, either for decoration or to make the blade lighter</li>
-            <li>𐑂<strong>Sarusawa Pond:</strong> Finishing and signing the tang (the base below the actual blade)</li>
-          </ul>
+          <div class="bottom-container">
+            <%= image_tag("sakura.png", alt: "Sakura", class:"sakura-img") %>
+            <ul class="article-list">
+              <li>𐑂 <span>Nara Deer Park</span> <br> A picturesque park where hundreds of freely roaming deer, considered sacred messengers of the gods, create a unique and charming atmosphere.</li>
+              <li>𐑂 <span>Kofuku-ji Temple</span> <br> Another ancient temple in Nara, known for its towering pagoda and historical significance dating back to the 7th century.</li>
+              <li>𐑂 <span>Kasuga Taisha Shrine</span> <br> Famous for its beautiful lantern-lined paths, this Shinto shrine is dedicated to the deity responsible for the protection of the city.</li>
+              <li>𐑂 <span>Nara National Museum</span> <br> Showcasing a vast collection of Buddhist art and artifacts, the museum provides insights into the cultural and religious history of the region.</li>
+            </ul>
+          </div>
     <div class="links-container" style="width: 700px; height: 200px; background: #252525; border-radius: 15px">
       <h1 class="links-title">RELATED ARTICLES</h1>
       <a href="https://www.toki.tokyo/experience/katana" target="_blank" class="links">NARA PREFECTURE TOURISM OFFICE</a>
