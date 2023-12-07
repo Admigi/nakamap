@@ -1,30 +1,27 @@
-.wrapper {
-    display: flex;
-    justify-content: center;
+.map.wrapper-map {
     width: 100%;
-    margin: 0 auto;
     overflow-x: hidden;
-    flex-direction: column;
-    height: 100vh;
+    height: calc(90vh - 121px);
   }
 
   .map-container {
-    width: 1300px;
-    height: 600px;
+    width: 100%;
+    max-width: 1300px;
+    height:calc(100% - 17px);
     flex-shrink: 0;
     border: 17px #7A5C58 solid;
     border-radius: 45px;
     overflow: hidden;
     background: rgba(230, 247, 255, 0.58);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
+    margin: 20px auto;
   }
 
    /* Style for the mascot container */
   .mascot-container {
     position: absolute;
-    top: -20px;
-    left: -100px;
+    top: 120px;
+    left: 120px;
     width: 100px;
     height: 60px;
     // background: url("/assets/images/mascott.png") no-repeat center center;
@@ -36,10 +33,10 @@
   /* Style for the speech bubble */
   .speech-bubble {
     position: absolute;
-    top: 112px;
-    left: 400px;
+    top: 150px;
+    left: 360px;
     width: 240px;
-    height: 210px;
+    height: auto;
     background: #7A5C58;
     box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.75);
     border-radius: 20px;
@@ -208,4 +205,3 @@
   flex-wrap: wrap;
   flex-direction: column;
 }
-
