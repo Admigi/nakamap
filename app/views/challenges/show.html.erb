@@ -1,7 +1,10 @@
 <%= form_for @challenge, url: check_answer_challenge_path(@challenge), method: :post, data: { controller: 'timer', timer_time_limit: 300 } do |f| %>
   <div class="challenge-form">
-    <div data-timer-target="timer" data-time-limit="<%= 2 * 20 %>"></div>
+    <div class="timer-container timer" data-timer-target="timer" data-time-limit="<%= 2 * 60 %>">
+      <div data-timer-target="timer" data-time-limit="<%= 2 * 60 %>"></div>
+    </div>
 
+    <div class="question-container">
     <% @challenge.metadata['questions'].each_with_index do |question, index| %>
     <div class="question-card" data-index="<%= index %>">
       <div class="card">
@@ -19,7 +22,18 @@
 
     <%= hidden_field_tag 'question_count', @challenge.metadata['questions'].length %>
 
-    <%= f.submit "Submit Answers", class: 'submit-button' %>
+    <%= f.submit "Done!", class: 'submit-button' %>
   </div>
 <% end %>
-
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    
+    checkboxes.forEach(function (checkbox) {
+      checkbox.addEventListener("change", function () {
+        const label = checkbox.closest(".option-label");
+        label.classList.toggle("selected", checkbox.checked);
+      });
+    });
+  });
+</script>
