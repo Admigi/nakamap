@@ -2,6 +2,7 @@
     width: 100%;
     overflow-x: hidden;
     height: calc(90vh - 121px);
+    position: relative;
   }
 
   .map-container {
@@ -14,33 +15,32 @@
     overflow: hidden;
     background: rgba(230, 247, 255, 0.58);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
+    margin: 0 auto;
   }
 
    /* Style for the mascot container */
   .mascot-container {
     position: absolute;
-    top: 120px;
-    left: 120px;
-    width: 100px;
-    height: 60px;
+    top: 15px;
+    left: 20px;
     // background: url("/assets/images/mascott.png") no-repeat center center;
     background-size: cover;
     border-radius: 50%;
     z-index: 1;
+
   }
 
   /* Style for the speech bubble */
   .speech-bubble {
     position: absolute;
-    top: 150px;
-    left: 360px;
+    top: 50px;
+    left: 270px;
     width: 240px;
     height: auto;
     background: #7A5C58;
     box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.75);
     border-radius: 20px;
-    z-index: 1;
+    z-index: 2;
   h1 {
     color: white;
     font-size: 16px;
@@ -51,6 +51,73 @@
     word-wrap: break-word;
   }
 }
+.category-filters {
+  background-color: white;
+  color: #252525;
+  position: absolute;
+  /* width: 250px; */
+  right: 20px;
+  bottom: 20px;
+  height: 250px;
+  z-index: 1;
+  background:#7A5C58;
+  border-radius: 20px;
+  padding: 20px;
+
+    form {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-direction: column;
+      height: 100%;
+
+      input {
+        padding: 4px;
+        border: none;
+        outline: none;
+        color: black;
+        background-color: #FFEEEE;
+        width: 200px;
+        height: 50px;
+        box-shadow: 0px 4px 8.1000003815px rgba(0, 0, 0, 0.51);
+        border-radius: 20px;
+        margin: 10px;
+        font-size: 16px;
+        font-family: "Urbanist";
+        font-weight: bold;
+      }
+
+      .filter {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+        height: 50px;
+        background: #FFEEEE;
+        box-shadow: 0px 4px 8.1000003815px rgba(0, 0, 0, 0.51);
+        border-radius: 20px;
+        margin: 10px;
+
+        select {
+          padding: 20px;
+          padding-left: 10px;
+          border: none;
+          outline: none;
+          color: #252525;
+          background-color: transparent;
+          border-radius: 4px;
+          width: 90%;
+          font-size: 16px;
+          font-family: "Urbanist";
+          font-weight: 500;
+
+          option:hover {
+            box-shadow: 0 0 10px 100px #FF4E58 inset;
+          }
+        }
+      }
+    }
+  }
 
 .mapboxgl-ctrl-logo {
     display: none !important;
@@ -185,23 +252,4 @@
 }
 .background {
   position: absolute;
-}
-
-
-.category-filters {
-  background-color: white;
-  color: #252525;
-  /* position: absolute; */
-  /* width: 250px; */
-  height: 120px;
-  z-index: 1;
-  box-shadow: 0px 4px 4.5px 0px rgba(0, 0, 0, 0.41);
-  border: 2px solid black;
-  /* right: 0px; */
-  /* bottom: -10px; */
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  flex-direction: column;
 }
