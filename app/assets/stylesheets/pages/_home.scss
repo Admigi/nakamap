@@ -82,9 +82,9 @@ html, body {
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: flex-start;  
+  align-items: flex-start;
   overflow: hidden;
-  .background{  
+  .background{
     filter: brightness(70%) contrast(120%) saturate(120%);
   }
 }
@@ -112,6 +112,7 @@ header .logo {
   position: relative;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .group .navigation,
@@ -121,6 +122,7 @@ header .logo {
   align-items: center;
   gap: 40px;
   font-size: 24px;
+  margin-bottom: 0;
 }
 
 .group .navigation li {
@@ -156,13 +158,18 @@ header .logo {
   height: 87vh;
   display: flex;
   justify-content: center;
-  align-items: center;  
+  align-items: center;
   overflow: hidden;
-  .background{  
+  .background{
     filter: brightness(70%) contrast(120%) saturate(120%);
   }
 }
 
+.navbar-picture {
+
+  object-fit: cover;
+  border-radius: 50%;
+}
 .content {
   position: relative;
   display: flex;
@@ -232,7 +239,7 @@ header .logo {
   background-color: transparent;
   color: white;
 }
-  
+
 .divider {
   height: 10px;
   background-color: #FFD2D2;
@@ -309,26 +316,26 @@ header .logo {
       transform: translate(-50%, -50%);
       overflow: hidden;
       border-radius: 48px;
-    
+
       .background-shape {
         width: 100%;
         height: 100%;
         position: absolute;
         border-radius: 48px;
       }
-    
+
       .bg-shape1 {
         z-index: 2;
         top: -10px;
         background: #FF8282;
       }
-    
+
       .bg-shape2 {
         z-index: 1;
         top: 10px;
         background: #562D2D;
       }
-    
+
       .start-link {
         position: absolute;
         left: 50%;
@@ -347,16 +354,16 @@ header .logo {
       .bg-shape2 {
         transition: opacity 0.3s ease;
       }
-    
+
       &:hover {
         .background-shape {
           transform: scale(1.1);
         }
-    
+
         .bg-shape2 {
           background-color: #FF8282;
         }
-    
+
         .start-link {
           background-color: #FF8282;
         }
@@ -408,7 +415,7 @@ header .logo {
     font-weight: 400;
     line-height: normal;
   }
-    
+
   .item {
     width: 270px;
     height: 390px;
@@ -491,7 +498,7 @@ header .logo {
       gap: 20px;
       align-items: center;
     }
-    
+
     & button {
       width: 329px;
       height: 102px;
@@ -507,7 +514,7 @@ header .logo {
       padding: 0.75rem;
       cursor: pointer;
       text-align: center;
-    
+
       &.bookmark-btn-home {
         display: flex;
         align-items: center;
