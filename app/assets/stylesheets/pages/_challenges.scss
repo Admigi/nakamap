@@ -1,79 +1,80 @@
 .challenge-form {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    background-color: #f5f5f5;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-  }
-  
-  .question-card {
-    border-radius: 8px;
-    border: 2px solid #252525;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-  
-    .card {
-      width: 100%;
-    }
-  
-    .card-body {
-      padding: 15px;
-    }
-  
-    h5.card-title {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-  
-    .options {
-      display: flex;
-      flex-direction: column;
-  
-      label {
-        display: block;
-        margin-bottom: 10px;
-      }
-    }
-  }
-  
-  .submit-button {
-    background-color: #4caf50;
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  
-    &:hover {
-      background-color: #45a049;
-    }
-  }
-  
-  .submit-button {
-    background-color: white;
-    bottom: 20px;
-    left: 20px;
-    width: 229px;
-    height: 70px;
-    font-weight: 700;
-    color: #252525;
-    border: 2px solid #252525;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 10px;
-    box-sizing: border-box;
-    transition: background-color 0.3s ease;
-  
-    &:hover {
-      background-color: #252525;
-      color: white;
-    }
-  }
+  max-width: 600px;
+  margin: 0 auto;
+}
 
+.question-card {
+  margin-bottom: 20px;
+}
+
+.card {
+  border: 1px solid #252525;
+  border-radius: 15px;
+  background: #252525;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  color: #FFF;
+  font-family: Urbanist;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+.options {
+  margin-top: 15px;
+  input[type="checkbox"]:checked {
+    background-color: #FF4E58;
+  }
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.submit-button {
+  width: 150px;
+  height: 50px;
+  color: #252525;
+  font-family: Urbanist;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  background-color: transparent;
+  border-radius: 30px;
+  border: 3px solid #252525;
+  padding: 0.75rem;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  color: #FFF;
+  font-family: Urbanist;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
   .challenge-bar {
     display: flex;
     justify-content: center;
@@ -317,13 +318,11 @@
   a,
   a {
     text-decoration: none !important;
-    color: inherit !important;
   }
   
   a:hover,
   a:hover {
     text-decoration: none !important;
-    color: inherit !important;
   }
   .ag-search-bar {
     max-width: 690px;
@@ -362,4 +361,57 @@
     cursor: pointer;
     padding: 10px;
     background: none;
+  }
+
+
+  // ==== Checkboxes =====
+
+  input[type="checkbox"] {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    pointer-events: none;
+    margin-right: 8px;
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    padding: 8px;
+    cursor: pointer;
+  }
+
+  label:hover {
+    background-color: #353535;
+  }
+
+  label:has(input[type="checkbox"]:checked) {
+    background-color: #FF4E58;
+  }
+
+
+
+  // ====== Timer ======
+  .timer {
+    font-size: 24px;
+    font-weight: 800;
+    color: #fff;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  .timer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
   }
