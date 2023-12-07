@@ -71,7 +71,7 @@
         <div class="content-container start-button">
             <div class="background-shape bg-shape1"></div>
             <div class="background-shape bg-shape2"></div>
-            <a href="#" class="start-link">START NOW</a>
+            <a href="<%= map_index_path %>" class="start-link">START NOW</a>
         </div>
       </div>
     </div>
@@ -79,7 +79,7 @@
   <!-- End of How It Works Section -->
 <section class="custom-carousel-section">
   <h2 class="carousel-title">Discover the Beauty of Japan</h2>
-  <p class="carousel-subtitle">Explore our curated selection of captivating regions, 
+  <p class="carousel-subtitle">Explore our curated selection of captivating regions,
 each with its unique charm and cultural wonders.</p>
   <ul class='slider'>
         <li class='item' style="background-image: url('<%= image_path('carousel6.jpg') %>')">
@@ -90,9 +90,9 @@ each with its unique charm and cultural wonders.</p>
             <h2 class='item-2title'>Japan</h2>
             <h2 class='item-title'>MOUNT<br/>FUJI</h2>
             <p class='item-description'>Discover breathtaking views and serene surroundings from this charming rental property nestled in the shadow of Japan's iconic Mount Fuji.</p>
-            <div class="button-container">
+            <div class="button-container" data-controller = "explore">
               <button class="bookmark-btn-home"><ion-icon name="add-circle-outline"></ion-icon></button>
-              <button>Explore</button>
+              <button data-explore-target="button">Explore</button>
             </div>
           </div>
         </li>
@@ -132,7 +132,7 @@ each with its unique charm and cultural wonders.</p>
             <h2 class='item-2title'>Japan</h2>
             <h2 class='item-title'>RITSURIN<br/>GARDEN</h2>
             <p class='item-description'>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.
+              Step into the enchanting Ritsurin Garden, a masterpiece of Japanese landscape design. Marvel at the meticulously manicured greenery, winding paths, and serene ponds that make this garden a tranquil haven in Takamatsu.
             </p>
             <div class="button-container">
               <button class="bookmark-btn-home"><ion-icon name="add-circle-outline"></ion-icon></button>
@@ -148,7 +148,7 @@ each with its unique charm and cultural wonders.</p>
             <h2 class='item-2title'>Japan</h2>
             <h2 class='item-title'>MOUNT<br/>FUJI</h2>
             <p class='item-description'>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.
+              Discover breathtaking views and serene surroundings from this charming rental property nestled in the shadow of Japan's iconic Mount Fuji.
             </p>
             <div class="button-container">
               <button class="bookmark-btn-home"><ion-icon name="add-circle-outline"></ion-icon></button>
