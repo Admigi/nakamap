@@ -9,8 +9,8 @@ export default class extends Controller {
     // Customize the options as needed
     const options = {
       position: { lat: 34.6882437, lng: 135.8397568 },
-      pov: { heading: 0, pitch: 0 },
-      zoom: 1,
+      pov: { heading: 0, pitch: 15 }, // heading for horizontal rotation, pitch for vertical rotation
+      zoom: 0.3,
     };
 
     const streetView = new google.maps.StreetViewPanorama(
