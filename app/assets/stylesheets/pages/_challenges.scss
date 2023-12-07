@@ -164,15 +164,7 @@
 
   // =======
   .challenge-body {
-    background-color: #383838;
-  }
-  .list-title {
-    font-weight: 800;
-    font-size: 40px;
-    text-align: center;
-    color: white;
-    margin-bottom: 20px;
-    margin-top: 10px;
+    background-color: transparent;
   }
   
   .ag-courses-list-title {
@@ -209,7 +201,7 @@
   .ag-courses-item_link {
     display: block;
     padding: 30px 20px;
-    background-color: #121212;
+    background-color: #252525;
   
     overflow: hidden;
   
@@ -333,4 +325,41 @@
     text-decoration: none !important;
     color: inherit !important;
   }
+  .ag-search-bar {
+    max-width: 690px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    background-color: #FFEEEE;
+    border-radius: 40px;
+    padding: 10px;
+    box-shadow: 0px 4px 8.1px 0px rgba(0, 0, 0, 0.51);
+  }
   
+  .search-container-cl {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+  
+  .search-input {
+    margin-left: -5spx;
+    background-color: transparent;
+    color: #7C7C7C;
+    font-family: Urbanist;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+    border: none;
+    outline: none;
+  }
+  
+  .search-icon {
+    color: #7C7C7C;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    padding: 10px;
+    background: none;
+  }
