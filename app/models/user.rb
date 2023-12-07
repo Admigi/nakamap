@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   def self.top_users(limit)
     # Assuming you have a 'points' attribute
-    where.not(points: nil, points: 0).order(points: :desc).limit(limit)
+    where.not(points: nil).order(points: :desc).limit(limit)
   end
   # validates :username, uniqueness: true, presence: true, length: { minimum: 3}
   # Include default devise modules. Others available are:
@@ -14,3 +14,4 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
         :recoverable, :rememberable, :validatable
 end
+
