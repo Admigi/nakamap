@@ -1,10 +1,10 @@
 <div class="category-filters">
     <%= form_tag(map_index_path, method: :get) do %>
       <label class="filter">
-        <%= select_tag 'categorie_id', options_from_collection_for_select(@categories, 'id', 'name', params[:categorie_id]), include_blank: '' %>
+        <%= select_tag 'categorie_id', options_from_collection_for_select(@categories, 'id', 'name', params[:categorie_id]), include_blank: '', prompt: 'Select a category' %>
       </label>
       <label class="filter">
-        <%= select_tag 'region_id', options_from_collection_for_select(@regions, 'id', 'name', params[:region_id]), include_blank: '' %>
+        <%= select_tag 'region_id', options_from_collection_for_select(@regions, 'id', 'name', params[:region_id]), include_blank: '', prompt: 'Select a region' %>
       </label>
       <%= submit_tag "Filter" %>
     <% end %>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="keywords" content="travel, japan, journey, virtual tour">
+  <meta name="description" content="Start your journey through Japan!">
+  <!-- googlefont import -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,regular,500,700" rel="stylesheet" />
+
+  <title>Nakamap</title>
+</head>
+
+<body>
+  <section class="hero-section section">
+  <div class="banner">
+      <div class="background">
+        <%= image_tag "fujisan.jpg" %>
+      </div>
+      <div class="content">
+        <h2>Begin your <span>journey</span> into Japan's Soul and <span>unveil Japan’s beauty.</span></h2>
+        <a href="#" class="btn">Scroll<ion-icon name="chevron-down-outline" style="vertical-align: middle;"></ion-icon></a>
+      </div>
+  </div>
+    </section>
+  <section class="divider"></section>
+  <!-- How It Works Section -->
+  <section class="how-it-works section">
+    <div class="how-it-works-content">
+      <div class="how-it-works-content-item">
+        <div class="content-container">
+          <h3>Wondering how to get started?</h3>
+          <p>Use the intuitive navigation menu to explore regions, categories, and challenges. Where do you want to go first?</p>
+        </div>
+        <div class="image-container">
+          <%= image_tag('hand1.png', class: 'hand-image') %>
+        </div>
+      </div>
+      <div class="svg-divider">
+        <%= image_tag('line.svg') %>
+      </div>
+      <div class="how-it-works-content-item">
+        <div class="content-container">
+          <h3>Explore Regions</h3>
+          <p>Browse through our featured regions, click on pins, and immerse yourself in the culture and beauty of each location.</p>
+        </div>
+        <div class="image-container2">
+          <%= image_tag('hand2.png', class: 'hand-image2') %>
+        </div>
+      </div>
+      <div class="svg-divider">
+        <%= image_tag('line.svg') %>
+      </div>
+      <div class="how-it-works-content-item">
+        <div class="content-container">
+          <h3>Earn Badges</h3>
+          <p>Join challenges and unlock exclusive badges. What challenge will you conquer first?</p>
+        </div>
+        <div class="image-container">
+          <%= image_tag('hand3.png', class: 'hand-image3') %>
+        </div>
+      </div>
+      <div class="svg-divider">
+      <%= image_tag('line.svg') %>
+      </div>
+      <div class="how-it-works-content-item">
+        <div class="content-container start-button">
+            <div class="background-shape bg-shape1"></div>
+            <div class="background-shape bg-shape2"></div>
+            <a href="<%= map_index_path %>" class="start-link">START NOW</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End of How It Works Section -->
+<section class="custom-carousel-section">
+  <h2 class="carousel-title">Discover the Beauty of Japan</h2>
+  <p class="carousel-subtitle">Explore our curated selection of captivating regions,
+each with its unique charm and cultural wonders.</p>
+  <ul class='slider'>
+        <li class='item' style="background-image: url('<%= image_path('carousel6.jpg') %>')">
+          <div class='content'>
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="10" viewBox="0 0 60 10" fill="none">
+              <path d="M5 5H55" stroke="white" stroke-width="10" stroke-linecap="round"/>
+            </svg>
+            <h2 class='item-2title'>Japan</h2>
+            <h2 class='item-title'>MOUNT<br/>FUJI</h2>
+            <p class='item-description'>Discover breathtaking views and serene surroundings from this charming rental property nestled in the shadow of Japan's iconic Mount Fuji.</p>
+            <div class="button-container" data-controller = "explore">
+              <button class="bookmark-btn-home"><ion-icon name="add-circle-outline"></ion-icon></button>
+              <button data-explore-target="button">Explore</button>
+            </div>
+          </div>
+        </li>
+        <li class='item' style="background-image: url('<%= image_path('carousel2.jpg') %>')">
+          <div class='content'>
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="10" viewBox="0 0 60 10" fill="none">
+              <path d="M5 5H55" stroke="white" stroke-width="10" stroke-linecap="round"/>
+            </svg>
+            <h2 class='item-2title'>Japan</h2>
+            <h2 class='item-title'>NARA<br/>PREFECTURE</h2>
+            <p class='item-description'>Explore the ancient beauty of Nara Park, where friendly deer roam freely among historic temples and lush greenery. Immerse yourself in the serenity of this sacred space, filled with centuries of cultural richness. </p>
+            <div class="button-container">
+              <button class="bookmark-btn-home"><ion-icon name="add-circle-outline"></ion-icon></button>
+              <button>Explore</button>
+            </div>
+          </div>
+        </li>
+        <li class='item' style="background-image: url('<%= image_path('carousel3.jpg') %>')">
+          <div class='content'>
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="10" viewBox="0 0 60 10" fill="none">
+              <path d="M5 5H55" stroke="white" stroke-width="10" stroke-linecap="round"/>
+            </svg>
+            <h2 class='item-2title'>Japan</h2>
+            <h2 class='item-title'>NAGANO<br/>PREFECTURE</h2>
+            <p class='item-description'>Discover the scenic wonders of Nagano Prefecture, where majestic mountains, hot springs, and traditional villages beckon. Whether you seek adventure on the slopes or tranquility in nature, Nagano offers a diverse and captivating experience.</p>
+            <div class="button-container">
+              <button class="bookmark-btn-home"><ion-icon name="add-circle-outline"></ion-icon></button>
+              <button>Explore</button>
+            </div>
+          </div>
+        </li>
+        <li class='item' style="background-image: url('<%= image_path('carousel4.jpg') %>')">
+          <div class='content'>
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="10" viewBox="0 0 60 10" fill="none">
+              <path d="M5 5H55" stroke="white" stroke-width="10" stroke-linecap="round"/>
+            </svg>
+            <h2 class='item-2title'>Japan</h2>
+            <h2 class='item-title'>RITSURIN<br/>GARDEN</h2>
+            <p class='item-description'>
+              Step into the enchanting Ritsurin Garden, a masterpiece of Japanese landscape design. Marvel at the meticulously manicured greenery, winding paths, and serene ponds that make this garden a tranquil haven in Takamatsu.
+            </p>
+            <div class="button-container">
+              <button class="bookmark-btn-home"><ion-icon name="add-circle-outline"></ion-icon></button>
+              <button>Explore</button>
+            </div>
+          </div>
+        </li>
+        <li class='item' style="background-image: url('<%= image_path('carousel6.jpg') %>')">
+          <div class='content'>
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="10" viewBox="0 0 60 10" fill="none">
+              <path d="M5 5H55" stroke="white" stroke-width="10" stroke-linecap="round"/>
+            </svg>
+            <h2 class='item-2title'>Japan</h2>
+            <h2 class='item-title'>MOUNT<br/>FUJI</h2>
+            <p class='item-description'>
+              Discover breathtaking views and serene surroundings from this charming rental property nestled in the shadow of Japan's iconic Mount Fuji.
+            </p>
+            <div class="button-container">
+              <button class="bookmark-btn-home"><ion-icon name="add-circle-outline"></ion-icon></button>
+              <button>Explore</button>
+            </div>
+          </div>
+        </li>
+        <li class='item' style="background-image: url('<%= image_path('carousel5.jpg') %>')">
+          <div class='content'>
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="10" viewBox="0 0 60 10" fill="none">
+              <path d="M5 5H55" stroke="white" stroke-width="10" stroke-linecap="round"/>
+            </svg>
+            <h2 class='item-2title'>Japan</h2>
+            <h2 class='item-title'>RITSURIN<br/>GARDEN</h2>
+            <p class='item-description'>Step into the enchanting Ritsurin Garden, a masterpiece of Japanese landscape design. Marvel at the meticulously manicured greenery, winding paths, and serene ponds that make this garden a tranquil haven in Takamatsu. </p>
+            <div class="button-container">
+              <button class="bookmark-btn-home"><ion-icon name="add-circle-outline"></ion-icon></button>
+              <button>Explore</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <nav class='nav'>
+        <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
+        <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
+      </nav>
+  <script>
+    const slider = document.querySelector('.slider');
+
+    function activate(e) {
+      const items = document.querySelectorAll('.item');
+      e.target.matches('.next') && slider.append(items[0])
+      e.target.matches('.prev') && slider.prepend(items[items.length-1]);
+    }
+
+    document.addEventListener('click',activate,false);
+</script>
+</section>
+  <!-- ionicons icons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
