@@ -71,6 +71,7 @@
       flex-direction: column;
       height: 100%;
 
+
       input {
         padding: 4px;
         border: none;
@@ -110,6 +111,8 @@
           font-size: 16px;
           font-family: "Urbanist";
           font-weight: 500;
+          text-align: center;
+
 
           option:hover {
             box-shadow: 0 0 10px 100px #FF4E58 inset;
