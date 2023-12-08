@@ -37,9 +37,7 @@
         <span class="user-bio"><%= @user.bio %></span>
       </div>
       <div class="button-container">
-        <%= link_to edit_dashboards_path, method: :get do %>
-          <i class="fas fa-edit" id="custom-button"> Modify Profile</i>
-        <% end %>
+        <%= button_to 'Edit profile', edit_dashboards_path, method: :get, class: 'custom-button' %>
       </div>
     </div>
   
@@ -127,7 +125,6 @@
       </p>
     <% end %>
   </div>
-  <h2 class="leaderboard-title">Leaderboard</h2>
 </div>
 
 <style>
