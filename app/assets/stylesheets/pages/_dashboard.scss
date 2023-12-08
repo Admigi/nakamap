@@ -236,6 +236,8 @@
   }
   
   .bookmarked-challenges-container {
+    
+    overflow-y: auto;
     position: relative;
     border-radius: 15px;
     border: 1px solid #252525;
@@ -252,6 +254,9 @@
     font-size: 24px;
     color: #252525;
     margin-top: -40px;
+    position: absolute;
+      top: 0;
+      left: 0;
   }
   
   .bookmarked-challenges-list {
@@ -285,12 +290,13 @@
 
 
   .news-container {
+    overflow-y: auto;
     position: relative;
     border-radius: 15px;
     border: 5px solid #921313;
     background: #562D2D;
     padding: 10px;
-    width: 314px;
+    max-width: 314px;
     height: 320px;
     margin-left: 20px;
     margin-top: 54px;
@@ -300,15 +306,28 @@
   .news-title {
     font-size: 24px;
     color: #252525;
-    margin-top: -90px;
+    margin-top: -363px;
   }
+
+  .bookmarked-title {
+    color: #FFF;
+    font-family: Urbanist;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 10px;
+    word-wrap: break-word;
+}
   .news-content {
     color: #FFF;
     font-family: Urbanist;
-    font-size: 24px;
+    font-size: 18px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     line-height: normal;
+    margin-top: 10px;
+    word-wrap: break-word;
   }
   
   .news-list {
