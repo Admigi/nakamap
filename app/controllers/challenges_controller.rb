@@ -1,8 +1,9 @@
 class ChallengesController < ApplicationController
+  before_action :authenticate_user!, only: [:show, :check_answer]
   def index
     @challenges = Challenge.all
   end
-  
+
   def show
     @challenge = Challenge.find(params[:id])
   end
@@ -19,7 +20,7 @@ class ChallengesController < ApplicationController
     correct_answers = 0
     points_for_correct_answer = 10  # Adjust points
     points_for_time_taken = 5
-    
+
     selected_options = params[:challenge][:selected_options]
 
     unless selected_options.nil?
