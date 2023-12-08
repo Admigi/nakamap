@@ -69,24 +69,54 @@
     </div>
   </div>
   <div class="bookmarked-challenges-container">
+    
+  <h2 class="bookmarked-challenges-title">Latest Challenge</h2>
   <ul class="bookmarked-challenges-list">
-    <% current_user.bookmarks.each do |bookmark| %>
+    <% pinned_challenges = Challenge.limit(4) %>
+    <% pinned_challenges.each do |challenge| %>
       <li class="bookmarked-challenge-container">
-        <%= link_to challenge_path(bookmark.challenge) do %>
+        <%= link_to challenge_path(challenge) do %>
           <div class="challenge-card">
-            <h3 class="challenge-title"><%= bookmark.challenge.name %></h3>
+            <h3 class="bookmarked-title"><%= challenge.name %></h3>
           </div>
         <% end %>
       </li>
     <% end %>
   </ul>
-  
-<h2 class="bookmarked-challenges-title">Pinned</h2>
 </div>
 
 <div class="news-container">
-  <h1 class="news-content">COMING SOON - すぐ</h2>
-<h2 class="news-title">News</h2>
+  <p class="news-content">🌸 Exciting News from Nakamap Japan! 🌸</p>
+  <p class="news-content"> 
+    <span class="news-content">🚀</span> 
+    <span class="news-content">Embark on a new adventure with our latest features!</span> 
+    <span class="news-content">🚀</span>
+  </p>
+  <p class="news-content">
+    <span class="news-content">🌟</span> 
+    <span class="news-content">Discover hidden gems in Japan with Nakamap Explorer</span> 
+    <span class="news-content">🌟</span>
+  </p>
+  <p class="news-content">
+    <span class="news-content">Celebrate our top explorers:</span> 
+    <span class="news-content">🎉</span>
+  </p>
+  <p class="news-content">
+    <span class="news-content">🥇</span> 
+    <span class="news-content"><%= @top_users[0].username %></span> 
+    <span class="news-content">with <%= @top_users[0].points %> points</span>
+  </p>
+  <p class="news-content">
+    <span class="news-content">🥈</span> 
+    <span class="news-content"><%= @top_users[1].username %></span> 
+    <span class="news-content">with <%= @top_users[1].points %> points</span>
+  </p>
+  <p class="news-content">
+    <span class="news-content">🥉</span> 
+    <span class="news-content"><%= @top_users[2].username %></span> 
+    <span class="news-content">with <%= @top_users[2].points %> points</span>
+  </p>
+
 </div>
 
 <div class="leaderboard-container">
@@ -126,67 +156,3 @@
     <% end %>
   </div>
 </div>
-
-<style>
-  .confetti {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background-color: #ffeb3b;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  animation: confetti-fall 1s linear infinite;
-}
-
-/* Keyframes for confetti falling */
-@keyframes confetti-fall {
-  0% {
-    transform: translateY(0) rotate(0deg);
-  }
-  100% {
-    transform: translateY(500px) rotate(360deg);
-  }
-}
-</style>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const leaderboardItems = document.querySelectorAll('.leaderboard-item');
-
-  leaderboardItems.forEach(item => {
-    item.addEventListener('mouseenter', createConfetti);
-  });
-
-  function createConfetti(event) {
-    const colors = ['#FF6347', '#FFD700', '#32CD32', '#87CEEB'];
-    const confettiCount = 40;
-    const confettiContainer = document.createElement('div');
-
-    for (let i = 0; i < confettiCount; i++) {
-      const confetti = document.createElement('div');
-      confetti.classList.add('confetti');
-
-      const x = Math.random() * window.innerWidth;
-      const y = Math.random() * window.innerHeight;
-
-      // const x = event.clientX; => to make them on the leaderboard items
-      // const y = event.clientY;
-
-      const color = colors[Math.floor(Math.random() * colors.length)];
-      const size = Math.random() * 10 + 5;
-
-      confetti.style.left = `${x}px`;
-      confetti.style.top = `${y}px`;
-      confetti.style.backgroundColor = color;
-      confetti.style.width = `${size}px`;
-      confetti.style.height = `${size}px`;
-
-      confettiContainer.appendChild(confetti);
-    }
-
-    document.body.appendChild(confettiContainer);
-
-    setTimeout(() => {
-      confettiContainer.remove();
-    }, 1000); //=> 3000/4000 depending on their location
-  }
-});
-</script>
