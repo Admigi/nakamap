@@ -1,38 +1,46 @@
 <% if notice %>
   <div class="game-notification success-notification m-1">
-    <%= notice %>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <%= notice.gsub("\n", '<br>').html_safe %>
   </div>
 <% end %>
 
 <% if alert %>
-  <div class="game-notification warning-notification m-1">
+  <div class="warning-notification m-1">
     <%= alert %>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 <% end %>
 
 
 <style>
-  .game-notification {
+
+  .warning-notification {
+    background-color: #ff5555;
+    color: #fff;
     position: fixed;
-    top: 120px;
+    top: 190px;
     right: 20px;
-    width: 300px;
+    width: 400px;
     padding: 20px;
     border-radius: 8px;
     font-size: 16px;
     text-align: center;
-    animation: slide-in 0.5s ease-in-out, slide-out 0.5s ease-in-out 4.5s forwards;
+    animation: slide-in 0.8s ease-in-out, slide-out 0.8s ease-in-out 4s forwards, hide-notification 0s 4.8s forwards;
+  }
+
+  .game-notification {
+    position: fixed;
+    top: 120px;
+    right: 20px;
+    width: 400px;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+    animation: slide-in 0.5s ease-in-out, slide-out 0.5s ease-in-out 4s forwards, hide-notification 0s 4.5s forwards;
   }
 
   .success-notification {
     background-color: #5cb85c;
-    color: #fff;
-  }
-
-  .warning-notification {
-    background-color: #f0ad4e;
     color: #fff;
   }
 
@@ -53,4 +61,10 @@
       transform: translateX(100%);
     }
   }
+  @keyframes hide-notification {
+    to {
+      display: none;
+    }
+  }
+
 </style>
