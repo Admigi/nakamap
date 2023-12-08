@@ -39,16 +39,24 @@ class ChallengesController < ApplicationController
 
     total_points = points_for_correct_answers + points_for_time_taken
 
-    flash[:notice] = "  You answered #{correct_answers} out of #{total_questions} questions correctly."
-    flash[:notice] += " You earned #{points_for_correct_answers} points for correct answers and #{points_for_time_taken} points for time taken."
-    flash[:notice] += " Total points: #{total_points}"
+    flash[:notice] = "You have #{correct_answers} good answer out of #{total_questions} questions."
+    flash[:alert] = "New badge earned!"
+
 
     current_user.update(points: current_user.points + total_points)
     redirect_to challenges_path
   end
 
   private
-
+  def check_and_assign_badge(user, challenge, correct_answers, total_questions)
+    # Logic to determine whether the user is eligible for a badge
+    if correct_answers == total_questions
+      # The user answered all questions correctly, so they get a badge
+      badge = Badge.find_by(name: 'Japan Explorer')
+      current_user.userbadges.create(badge: badge) unless current_user.userbadges.exists?(badge_id: badge.id)
+    end
+  end  
+    
   def calculate_points_for_time_taken(time_taken)
     # Logic based on the time / good answer
     max_points = 20  # Maximum points for time taken

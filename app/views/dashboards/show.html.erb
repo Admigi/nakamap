@@ -1,8 +1,10 @@
 <div class="menu-profile">
   <%= link_to "Profile", dashboards_path %>
   <%= link_to "Achievements", badges_path %>
+  <a href="#"> Trips</a>
+  <a href="#"> Help Center</a>
+  <a href="#"> Community Hub</a>
 </div>
-
 <div class="wrapper-dhs">
 
   <div class="card-profile">
@@ -30,16 +32,17 @@
       </div>
 
       <h1 class="card-name"><%= @user.username %></h1>
+      <h2 class="card-surname">Tanukedu44</h2>
       <div class="bio-container">
         <span class="user-bio"><%= @user.bio %></span>
       </div>
       <div class="button-container">
         <%= button_to 'Edit profile', edit_dashboards_path, method: :get, class: 'custom-button' %>
       </div>
-      <hr>
     </div>
-
+  
     <div class="achievements-container">
+      <hr class="achieve">
       <h2 class="achievements-title">Achievements:</h2>
       <ul class="badge-list">
         <% @user.badges.each do |badge| %>
@@ -66,23 +69,30 @@
     </div>
   </div>
   <div class="bookmarked-challenges-container">
-    <h2 class="bookmarked-challenges-title">Bookmarked Challenges:</h2>
-    <ul class="bookmarked-challenges-list">
-      <% current_user.bookmarks.each do |bookmark| %>
-        <li class="bookmarked-challenge-container">
-          <%= link_to challenge_path(bookmark.challenge) do %>
-            <div class="challenge-card">
-              <h3 class="challenge-title"><%= bookmark.challenge.name %></h3>
-            </div>
-          <% end %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-    <div class="leaderboard-container">
-      <ul class="leaderboard-list">
-        <% @top_users.each_with_index do |user, index| %>
-          <% rank_class = case index
+  <ul class="bookmarked-challenges-list">
+    <% current_user.bookmarks.each do |bookmark| %>
+      <li class="bookmarked-challenge-container">
+        <%= link_to challenge_path(bookmark.challenge) do %>
+          <div class="challenge-card">
+            <h3 class="challenge-title"><%= bookmark.challenge.name %></h3>
+          </div>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+  
+<h2 class="bookmarked-challenges-title">Pinned</h2>
+</div>
+
+<div class="news-container">
+  <h1 class="news-content">COMING SOON - すぐ</h2>
+<h2 class="news-title">News</h2>
+</div>
+
+<div class="leaderboard-container">
+  <ul class="leaderboard-list">
+    <% @top_users.each_with_index do |user, index| %>
+      <% rank_class = case index
                       when 0
                         'gold'
                       when 1
@@ -92,27 +102,92 @@
                       else
                         ''
                       end %>
-          <li class="leaderboard-item <%= 'current-user' if user.id == current_user.id %> <%= rank_class %>">
-            <span class="user-rank"><%= index + 1 %></span>
-            <% if user.image_url.attached? %>
-              <%= image_tag user.image_url, class: "profile-picture-ldb" %>
-            <% else %>
-              <%= image_tag 'default.jpg', class: "profile-picture-ldb" %>
-            <% end %>
-            <span class="user-name"><%= user.username %></span>
-            <span class="user-points"><%= user.points %> points</span>
-          </li>
-        <% end %>
-      </ul>
-      <div class="current-user-container">
-        <% if current_user && current_user.points.present? %>
-          <p class="current-user-info">
-          <span><%= @top_users.index { |user| user.id == current_user.id } + 1 %></span><%= current_user.username %></p>
+      <li class="leaderboard-item <%= 'current-user' if user.id == current_user.id %> <%= rank_class %>">
+        <span class="user-rank"><%= index + 1 %></span>
+        <% if user.image_url.attached? %>
+          <%= image_tag user.image_url, class: "profile-picture-ldb" %>
         <% else %>
-          <p class="current-user-info">
-            You are not ranked yet.
-          </p>
+          <%= image_tag 'default.jpg', class: "profile-picture-ldb" %>
         <% end %>
-      </div>
-    </div>
+        <span class="user-name"><%= user.username %></span>
+        <span class="user-points"><%= user.points %> points</span>
+      </li>
+    <% end %>
+  </ul>
+  <div class="current-user-container">
+    <% if current_user && current_user.points.present? %>
+      <p class="current-user-info">
+        <span><%= @top_users.index { |user| user.id == current_user.id } + 1 %></span><%= current_user.username %>
+      </p>
+    <% else %>
+      <p class="current-user-info">
+        You are not ranked yet.
+      </p>
+    <% end %>
+  </div>
+  <h2 class="leaderboard-title">Leaderboard</h2>
 </div>
+
+<style>
+  .confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #ffeb3b;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  animation: confetti-fall 1s linear infinite;
+}
+
+/* Keyframes for confetti falling */
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(500px) rotate(360deg);
+  }
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const leaderboardItems = document.querySelectorAll('.leaderboard-item');
+
+  leaderboardItems.forEach(item => {
+    item.addEventListener('mouseenter', createConfetti);
+  });
+
+  function createConfetti(event) {
+    const colors = ['#FF6347', '#FFD700', '#32CD32', '#87CEEB'];
+    const confettiCount = 40;
+    const confettiContainer = document.createElement('div');
+
+    for (let i = 0; i < confettiCount; i++) {
+      const confetti = document.createElement('div');
+      confetti.classList.add('confetti');
+
+      const x = Math.random() * window.innerWidth;
+      const y = Math.random() * window.innerHeight;
+
+      // const x = event.clientX; => to make them on the leaderboard items
+      // const y = event.clientY;
+
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      const size = Math.random() * 10 + 5;
+
+      confetti.style.left = `${x}px`;
+      confetti.style.top = `${y}px`;
+      confetti.style.backgroundColor = color;
+      confetti.style.width = `${size}px`;
+      confetti.style.height = `${size}px`;
+
+      confettiContainer.appendChild(confetti);
+    }
+
+    document.body.appendChild(confettiContainer);
+
+    setTimeout(() => {
+      confettiContainer.remove();
+    }, 1000); //=> 3000/4000 depending on their location
+  }
+});
+</script>

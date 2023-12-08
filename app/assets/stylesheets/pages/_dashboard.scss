@@ -2,10 +2,11 @@
   display: flex;
   width: 100%;
   margin: 0 auto;
-  overflow-x: hidden;
-  flex-direction: column;
+  flex-direction: row;
   height: 100vh;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  background-color: #FFF5F5;
+  gap: 20px;
 }
 .badge-list {
     display: flex;
@@ -18,9 +19,11 @@
     margin: 10px;
     position: relative;
     transition: transform 0.3s ease-in-out;
+    z-index: 1;
   
     &:hover {
       transform: scale(1.05);
+      z-index: 2;
     }
   
     img {
@@ -91,8 +94,10 @@
   }
   
   .card-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
     margin: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     border-radius: 8px;
     padding: 10px;
     max-width: 460px;
@@ -105,7 +110,15 @@
       font-style: normal;
       font-weight: 700;
       line-height: normal;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
+    }
+    .card-surname {
+      color: #A1A1A1;
+      font-size: 27px;
+      font-family: Urbanist;
+      font-weight: 300;
+      word-wrap: break-word;
+      margin-bottom: 50px;
     }
   }
   
@@ -115,7 +128,7 @@
     position: relative;
   
     button.custom-button {
-      width: 100%;
+      width: 335px;
       height: 56px;
       background: #562D2D;
       border-radius: 20px;
@@ -127,6 +140,12 @@
       word-wrap: break-word;
     }
   }
+
+  .achieve {
+    border: 1px solid #252525;
+    margin: 0;
+    width: 412.001px;
+  }
   
   .bio-container {
     span {
@@ -137,10 +156,16 @@
       margin-bottom: 10px;
     }
   }
+
+  .achievements-container {
+    padding: 10px;
+    margin-top: 15px;
+    width: calc(100% - 15px);
+  }
   
   .achievements-title {
-    font-weight: 700;
-    font-size: 40px;
+    font-weight: 800;
+    font-size: 46px;
     color: #252525;
   }
 
@@ -211,21 +236,22 @@
   }
   
   .bookmarked-challenges-container {
-    background-color: #f8f8f8;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-    border-radius: 8px;
+    position: relative;
+    border-radius: 15px;
+    border: 1px solid #252525;
+    background: #7A5C58;
     padding: 10px;
-    max-width: 650px;
-    max-height: 380px;
-    margin-top: 15px;
+    width: 314px;
+    height: 100px;
+    margin-left: 20px;
+    margin-top: 54px;
     margin-bottom: 15px;
-    width: calc(50% - 15px);
   }
   
   .bookmarked-challenges-title {
     font-size: 24px;
     color: #252525;
-    margin-bottom: 10px;
+    margin-top: -40px;
   }
   
   .bookmarked-challenges-list {
@@ -257,6 +283,42 @@
     }
   }
 
+
+  .news-container {
+    position: relative;
+    border-radius: 15px;
+    border: 5px solid #921313;
+    background: #562D2D;
+    padding: 10px;
+    width: 314px;
+    height: 320px;
+    margin-left: 20px;
+    margin-top: 54px;
+    margin-bottom: 15px;
+  }
+  
+  .news-title {
+    font-size: 24px;
+    color: #252525;
+    margin-top: -90px;
+  }
+  .news-content {
+    color: #FFF;
+    font-family: Urbanist;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  
+  .news-list {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0;
+    margin: 0;  
+  }
   .wrapper {
     overflow: visible;
     display: flex;
@@ -267,11 +329,18 @@
   }
 
   .leaderboard-container {
+    position: relative;
+    margin-right: 20px;
     padding: 10px;
-    margin-top: 15px;
+    margin-top: 42px;
     width: calc(25% - 15px);
   }
   
+  .leaderboard-title {
+    font-size: 24px;
+    color: #252525;
+    margin-top: -756px;
+  }
   .leaderboard-list {
     list-style-type: none;
     padding: 0;
