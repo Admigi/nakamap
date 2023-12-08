@@ -431,3 +431,70 @@
     background-color: #7a73ff;
   }
   
+
+
+  //=== responsive 
+  @media screen and (max-width: 1440px) and (max-height: 1200px) {
+    .news-container {
+      padding: 30px;
+      max-width: 500px;
+      height: 532px;
+      margin-top: 54px;
+      margin-bottom: 25px;
+    }
+  
+    .news-title {
+      font-size: 36px;
+      margin-top: -500px;
+    }
+  
+    .leaderboard-container {
+      width: calc(50% - 20px);
+    }
+  
+    .leaderboard-title {
+      font-size: 36px;
+      margin-top: -1000px;
+    }
+  
+    /* Increased font sizes for better readability */
+    .leaderboard-item,
+    .user-points,
+    .user-rank,
+    .user-name,
+    .user-points,
+    .news-content,
+    .bookmarked-title,
+    .current-user-info
+    .profile-name {
+      font-size: 22px;
+    }
+  
+    .card-name,
+    .card-surname {
+      font-size: 30px;
+    }
+  
+    .challenge-title {
+      font-size: 24px;
+    }
+  
+    .custom-button {
+      font-size: 24px;
+    }
+    .current-user-info{
+      font-size: 22px;
+    }
+    .status-button {
+      width: 80px;
+      height: 80px;
+    }
+    .profile-picture-ldb{
+      width: 70px;
+      height: 70px;
+    }
+    .news-content {
+      font-size: 25px;
+      font-weight: 500;
+    }
+  }
