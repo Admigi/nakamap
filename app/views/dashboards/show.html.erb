@@ -68,22 +68,23 @@
       </ul>
     </div>
   </div>
+  
   <div class="bookmarked-challenges-container">
-    
-  <h2 class="bookmarked-challenges-title">Latest Challenge</h2>
-  <ul class="bookmarked-challenges-list">
-    <% pinned_challenges = Challenge.limit(4) %>
-    <% pinned_challenges.each do |challenge| %>
-      <li class="bookmarked-challenge-container">
-        <%= link_to challenge_path(challenge) do %>
-          <div class="challenge-card">
-            <h3 class="bookmarked-title"><%= challenge.name %></h3>
-          </div>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
-</div>
+    <ul class="bookmarked-challenges-list">
+      <% pinned_challenges = Challenge.limit(4) %>
+      
+  <p class="latest-challenges-title">Latest challenges</p>
+      <% pinned_challenges.each do |challenge| %>
+        <li class="bookmarked-challenge-container">
+          <%= link_to challenge_path(challenge) do %>
+            <div class="challenge-card">
+              <h3 class="bookmarked-title"><%= challenge.name %></h3>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 
 <div class="news-container">
   <p class="news-content">🌸 Exciting News from Nakamap Japan! 🌸</p>
