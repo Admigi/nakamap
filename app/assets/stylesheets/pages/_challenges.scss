@@ -79,7 +79,7 @@ label {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
-  
+
     input[type="text"] {
       padding: 10px;
       font-size: 16px;
@@ -89,7 +89,7 @@ label {
       border: none;
       outline: none;
     }
-  
+
     button {
       padding: 10px 15px;
       background-color: #007BFF;
@@ -98,7 +98,7 @@ label {
       border-radius: 4px;
       cursor: pointer;
     }
-  
+
     .search-icon {
       font-size: 16px;
       margin-right: 8px;
@@ -109,15 +109,15 @@ label {
     font-size: 18px;
     font-weight: bold;
   }
-  
+
   .countdown {
     color: #3498db;
   }
-  
+
   .timer-expiring {
     animation: pulse 0.5s infinite alternate;
   }
-  
+
   @keyframes pulse {
     from {
       color: #e74c3c;
@@ -143,12 +143,12 @@ label {
     justify-content: space-around;
     transition: background-color 0.3s ease;
   }
-  
+
   .bookmark-btn ion-icon {
     font-size: 20px;
     margin-right: 5px;
   }
-  
+
   .bookmark-btn:hover {
     background-color: #45a049;
   }
@@ -167,7 +167,7 @@ label {
   .challenge-body {
     background-color: transparent;
   }
-  
+
   .ag-courses-list-title {
     margin-bottom: 20px;
   }
@@ -176,7 +176,7 @@ label {
     width: 1142px;
     margin: 0 auto;
   }
-  
+
   .ag-courses_box {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -186,26 +186,26 @@ label {
     align-items: flex-start;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-  
+
     padding: 50px 0;
   }
   .ag-courses_item {
     -ms-flex-preferred-size: calc(33.33333% - 30px);
     flex-basis: calc(33.33333% - 30px);
-  
+
     margin: 0 15px 30px;
-  
+
     overflow: hidden;
-  
+
     border-radius: 28px;
   }
   .ag-courses-item_link {
     display: block;
     padding: 30px 20px;
     background-color: #252525;
-  
+
     overflow: hidden;
-  
+
     position: relative;
   }
   .ag-courses-item_link:hover,
@@ -221,27 +221,27 @@ label {
   .ag-courses-item_title {
     min-height: 87px;
     margin: 0 0 25px;
-  
+
     overflow: hidden;
-  
+
     font-weight: bold;
     font-size: 30px;
     color: #FFF;
-  
+
     z-index: 2;
     position: relative;
   }
   .ag-courses-item_date-box {
     font-size: 18px;
     color: #FFF;
-  
+
     z-index: 2;
     position: relative;
   }
   .ag-courses-item_date {
     font-weight: bold;
     color: #f9b234;
-  
+
     -webkit-transition: color .5s ease;
     -o-transition: color .5s ease;
     transition: color .5s ease
@@ -250,14 +250,14 @@ label {
     height: 128px;
     width: 128px;
     background-color: #f9b234;
-  
+
     z-index: 1;
     position: absolute;
     top: -75px;
     right: -75px;
-  
+
     border-radius: 50%;
-  
+
     -webkit-transition: all .5s ease;
     -o-transition: all .5s ease;
     transition: all .5s ease;
@@ -277,9 +277,9 @@ label {
   .ag-courses_item:nth-child(6n) .ag-courses-item_bg {
     background-color: #4c49ea;
   }
-  
-  
-  
+
+
+
   @media only screen and (max-width: 979px) {
     .ag-courses_item {
       -ms-flex-preferred-size: calc(50% - 30px);
@@ -289,12 +289,12 @@ label {
       font-size: 24px;
     }
   }
-  
+
   @media only screen and (max-width: 767px) {
     .ag-format-container {
       width: 96%;
     }
-  
+
   }
   @media only screen and (max-width: 639px) {
     .ag-courses_item {
@@ -304,7 +304,7 @@ label {
     .ag-courses-item_title {
       min-height: 72px;
       line-height: 1;
-  
+
       font-size: 24px;
     }
     .ag-courses-item_link {
@@ -315,15 +315,15 @@ label {
     }
   }
 
-  a,
-  a {
+  a  {
     text-decoration: none !important;
   }
-  
+
   a:hover,
   a:hover {
     text-decoration: none !important;
   }
+
   .ag-search-bar {
     max-width: 690px;
     margin-bottom: 20px;
@@ -334,13 +334,13 @@ label {
     padding: 10px;
     box-shadow: 0px 4px 8.1px 0px rgba(0, 0, 0, 0.51);
   }
-  
+
   .search-container-cl {
     display: flex;
     align-items: center;
     gap: 3px;
   }
-  
+
   .search-input {
     margin-left: -5spx;
     background-color: transparent;
@@ -353,7 +353,7 @@ label {
     border: none;
     outline: none;
   }
-  
+
   .search-icon {
     color: #7C7C7C;
     border: none;
@@ -362,7 +362,6 @@ label {
     padding: 10px;
     background: none;
   }
-
 
   // ==== Checkboxes =====
 

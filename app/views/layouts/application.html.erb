@@ -29,14 +29,18 @@
         <ul class="action">
           <li><a href="#"><ion-icon name="language-outline"></ion-icon></a></li>
 
-          <% if user_signed_in? %>
+          <% if @user != nil %>
             <li>
               <%= link_to destroy_user_session_path, data: {turbo_method: :delete} do %>
                 <ion-icon name="log-out-outline"></ion-icon>
               <% end %>
             </li>
             <li>
+            <% if @user.image_url.attached? %>
+              <%= link_to image_tag(@user.image_url, class: "navbar-picture "), dashboards_path(current_user) %>
+            <% else %>
               <%= link_to 'Profile', dashboards_path(current_user) %>
+            <% end %>
             </li>
           <% else %>
             <li>
