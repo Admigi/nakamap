@@ -15,4 +15,8 @@ module BadgesHelper
       'Unknown Badge Type'
     end
   end
+
+  def has_badge?(badge)
+    current_user.badges.include?(badge)
+  end
 end

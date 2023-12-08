@@ -8,6 +8,10 @@ class User < ApplicationRecord
     # Assuming you have a 'points' attribute
     where.not(points: nil).order(points: :desc).limit(limit)
   end
+
+  def has_badge?(badge_name)
+    badges.exists?(name: badge_name)
+  end
   # validates :username, uniqueness: true, presence: true, length: { minimum: 3}
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
